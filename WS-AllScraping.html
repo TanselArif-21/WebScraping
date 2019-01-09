@@ -11830,7 +11830,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">lxml</span> <span class="k">import</span> <span class="n">html</span>
@@ -11854,7 +11854,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[277]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">findStars</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">site</span><span class="p">):</span>
@@ -11961,7 +11961,8 @@ div#notebook {
         <span class="n">titl_class</span> <span class="o">=</span> <span class="s1">&#39;noQuotes&#39;</span>
         <span class="n">dat_class</span> <span class="o">=</span> <span class="s1">&#39;ratingDate&#39;</span>
         
-        <span class="c1"># Get all the innerBubble classes which contain the reviews as well as any responses to these reviews</span>
+        <span class="c1"># Get all the innerBubble classes which contain the reviews as well as </span>
+        <span class="c1"># any responses to these reviews</span>
         <span class="n">reviews</span> <span class="o">=</span> <span class="n">top</span><span class="o">.</span><span class="n">find_class</span><span class="p">(</span><span class="n">rev_class_1</span><span class="p">)</span>
         
         <span class="c1"># Loop through the reviews</span>
@@ -11973,8 +11974,10 @@ div#notebook {
         <span class="c1"># Get all the review containers</span>
         <span class="n">ratings</span><span class="o">=</span><span class="n">top</span><span class="o">.</span><span class="n">find_class</span><span class="p">(</span><span class="n">rat_class</span><span class="p">)</span>
 
-        <span class="c1"># Within each review container is a class, the name of which determines the rating to display</span>
-        <span class="c1"># We use the findStars function to determine the rating from the class name</span>
+        <span class="c1"># Within each review container is a class, the name of </span>
+        <span class="c1"># which determines the rating to display</span>
+        <span class="c1"># We use the findStars function to determine the rating </span>
+        <span class="c1"># from the class name</span>
         <span class="n">ratings_array</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ratings</span><span class="p">:</span>
             <span class="n">ratings_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">findStars</span><span class="p">(</span><span class="n">html</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">site</span><span class="p">))</span>
@@ -11996,7 +11999,8 @@ div#notebook {
             <span class="n">dates_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">text_content</span><span class="p">())</span>
             
         <span class="c1"># Diagnostics</span>
-        <span class="n">success</span> <span class="o">=</span> <span class="n">diagnostics</span><span class="p">(</span><span class="n">silent</span><span class="p">,</span><span class="n">ratings_array</span><span class="p">,</span><span class="n">reviews_array</span><span class="p">,</span><span class="n">dates_array</span><span class="p">,</span><span class="n">titles_array</span><span class="p">)</span>
+        <span class="n">success</span> <span class="o">=</span> <span class="n">diagnostics</span><span class="p">(</span><span class="n">silent</span><span class="p">,</span><span class="n">ratings_array</span><span class="p">,</span><span class="n">reviews_array</span><span class="p">,</span>\
+                              <span class="n">dates_array</span><span class="p">,</span><span class="n">titles_array</span><span class="p">)</span>
         
     <span class="k">elif</span> <span class="n">site</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;yelp&#39;</span><span class="p">:</span>
         <span class="n">rev_class_1</span> <span class="o">=</span> <span class="s1">&#39;review-content&#39;</span>
@@ -12004,7 +12008,8 @@ div#notebook {
         <span class="n">rat_class</span> <span class="o">=</span> <span class="s1">&#39;biz-rating&#39;</span>
         <span class="n">dat_class_2</span> <span class="o">=</span> <span class="s1">&#39;rating-qualifier&#39;</span>
         
-        <span class="c1"># Get all the innerBubble classes which contain the reviews as well as any responses to these reviews</span>
+        <span class="c1"># Get all the innerBubble classes which contain the reviews as well as </span>
+        <span class="c1"># any responses to these reviews</span>
         <span class="n">reviews</span> <span class="o">=</span> <span class="n">top</span><span class="o">.</span><span class="n">find_class</span><span class="p">(</span><span class="n">rev_class_1</span><span class="p">)</span>
         
         <span class="c1"># Loop through the reviews</span>
@@ -12016,17 +12021,20 @@ div#notebook {
         <span class="c1"># Set empty the titles</span>
         <span class="n">titles_array</span> <span class="o">=</span> <span class="n">reviews_array</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
         
-        <span class="c1"># Within each review-content is a class called biz-rating, the name of which determines the rating to display</span>
+        <span class="c1"># Within each review-content is a class called biz-rating, the name of </span>
+        <span class="c1"># which determines the rating to display</span>
         <span class="c1"># We use the findStars function to determine the rating from the class name</span>
         <span class="n">ratings_array</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">getattr</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39;find_class&#39;</span><span class="p">)(</span><span class="n">rat_class</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">reviews</span><span class="p">]:</span>
             <span class="n">ratings_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">findStars</span><span class="p">(</span><span class="n">html</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="s1">&#39;yelp&#39;</span><span class="p">))</span>   
         
-        <span class="c1"># Get the dates. When a review is updated, the word updated review is present in the dates string</span>
+        <span class="c1"># Get the dates. When a review is updated, the word updated review is present</span>
+        <span class="c1"># in the dates string</span>
         <span class="n">dates_array</span><span class="o">=</span><span class="p">[]</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">reviews</span><span class="p">:</span>
-            <span class="n">dates_array</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="o">.</span><span class="n">find_class</span><span class="p">(</span><span class="n">dat_class_2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text_content</span><span class="p">())</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Updated review&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+            <span class="n">dates_array</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="o">.</span><span class="n">find_class</span><span class="p">(</span><span class="n">dat_class_2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text_content</span><span class="p">())</span><span class="o">.</span>\
+                               <span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Updated review&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
         
         <span class="c1"># Diagnostics</span>
         <span class="n">success</span> <span class="o">=</span> <span class="n">diagnostics</span><span class="p">(</span><span class="n">silent</span><span class="p">,</span><span class="n">ratings_array</span><span class="p">,</span><span class="n">reviews_array</span><span class="p">,</span><span class="n">dates_array</span><span class="p">)</span>
@@ -12042,7 +12050,8 @@ div#notebook {
     <span class="n">df_reviewdates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dates_array</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
     
     <span class="c1"># Consolidate into a dataframe</span>
-    <span class="n">df_fullreview</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_review</span><span class="p">,</span><span class="n">df_titles</span><span class="p">,</span><span class="n">df_ratings</span><span class="p">[</span><span class="s1">&#39;Rating&#39;</span><span class="p">],</span><span class="n">df_reviewdates</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">df_fullreview</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_review</span><span class="p">,</span><span class="n">df_titles</span><span class="p">,</span><span class="n">df_ratings</span><span class="p">[</span><span class="s1">&#39;Rating&#39;</span><span class="p">],</span>\
+                               <span class="n">df_reviewdates</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">df_fullreview</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     
     <span class="c1"># Combine review and title into a single column</span>
@@ -12050,11 +12059,13 @@ div#notebook {
 
     <span class="k">return</span> <span class="n">df_fullreview</span><span class="p">,</span><span class="n">success</span>
 
-<span class="k">def</span> <span class="nf">fullscraper</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">first_url</span><span class="p">,</span> <span class="n">url1</span><span class="p">,</span> <span class="n">url2</span><span class="p">,</span> <span class="n">increment_string1</span><span class="p">,</span> <span class="n">increment_string2</span><span class="p">,</span> <span class="n">total_pages</span><span class="p">,</span> <span class="n">increment</span><span class="p">,</span> <span class="n">output_file</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">fullscraper</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">first_url</span><span class="p">,</span> <span class="n">url1</span><span class="p">,</span> <span class="n">url2</span><span class="p">,</span> <span class="n">increment_string1</span><span class="p">,</span> <span class="n">increment_string2</span><span class="p">,</span>\
+                <span class="n">total_pages</span><span class="p">,</span> <span class="n">increment</span><span class="p">,</span> <span class="n">output_file</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    This function increments the site url to the next page according to update criteria and scrapes that page.</span>
-<span class="sd">    The full url of subsequent pages is url = url1 + increment_string1 + url2 + increment_string2. In cases</span>
-<span class="sd">    of error in reading information, attempts are made to re-read data.</span>
+<span class="sd">    This function increments the site url to the next page according to update </span>
+<span class="sd">    criteria and scrapes that page. The full url of subsequent pages is </span>
+<span class="sd">    url = url1 + increment_string1 + url2 + increment_string2. </span>
+<span class="sd">    In cases of error in reading information, attempts are made to re-read data.</span>
 <span class="sd">    first_url: A string url. The main url page</span>
 <span class="sd">    url1, url2: The static parts of the urls that do not change in incrementation</span>
 <span class="sd">    increment_string1, increment_string2: The parts of the url that change</span>
@@ -12084,7 +12095,8 @@ div#notebook {
         
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">total_pages</span><span class="p">):</span>
             <span class="n">success</span> <span class="o">=</span> <span class="kc">False</span>
-            <span class="n">url_temp</span> <span class="o">=</span> <span class="n">url1</span> <span class="o">+</span> <span class="n">increment_string1</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">increment</span><span class="p">)</span> <span class="o">+</span> <span class="n">increment_string2</span> <span class="o">+</span> <span class="n">url2</span>
+            <span class="n">url_temp</span> <span class="o">=</span> <span class="n">url1</span> <span class="o">+</span> <span class="n">increment_string1</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">increment</span><span class="p">)</span> <span class="o">+</span>\
+            <span class="n">increment_string2</span> <span class="o">+</span> <span class="n">url2</span>
             
             <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">%</span><span class="k">10</span> == 0) or (i == total_pages):
                 <span class="k">while</span> <span class="ow">not</span> <span class="n">success</span><span class="p">:</span>
@@ -12136,11 +12148,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[279]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">,</span><span class="n">success</span> <span class="o">=</span> <span class="n">webscrape</span><span class="p">(</span><span class="s2">&quot;https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d2570383</span><span class="se">\</span>
-<span class="s2">-Reviews-Cafe_in_the_Crypt-London_England.html&quot;</span><span class="p">,</span><span class="s1">&#39;tripadvisor&#39;</span><span class="p">,</span><span class="kc">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">,</span><span class="n">success</span> <span class="o">=</span> <span class="n">webscrape</span><span class="p">(</span><span class="s2">&quot;https://www.tripadvisor.co.uk/Restaurant_Review-g186338-</span><span class="se">\</span>
+<span class="s2">d2570383-Reviews-Cafe_in_the_Crypt-London_England.html&quot;</span><span class="p">,</span><span class="s1">&#39;tripadvisor&#39;</span><span class="p">,</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12173,7 +12185,7 @@ Diagnostics complete!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[280]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -12189,7 +12201,7 @@ Diagnostics complete!
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[280]:</div>
+<div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -12222,43 +12234,43 @@ Diagnostics complete!
   <tbody>
     <tr>
       <th>0</th>
-      <td>Took some Australian relations here during a v...</td>
-      <td>Novel</td>
-      <td>5</td>
-      <td>Reviewed 3 days ago</td>
-      <td>Took some Australian relations here during a v...</td>
+      <td>On a Friday evening before our late night at t...</td>
+      <td>Crazy busy for Friday dinner</td>
+      <td>3</td>
+      <td>Reviewed yesterday</td>
+      <td>On a Friday evening before our late night at t...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Visited after walking through Trafalgar Square...</td>
-      <td>Quick drink and snack</td>
-      <td>5</td>
-      <td>Reviewed 6 days ago</td>
-      <td>Visited after walking through Trafalgar Square...</td>
+      <td>I love this cafe. Not only are the prices reas...</td>
+      <td>Unusual surroundings for a coffee</td>
+      <td>4</td>
+      <td>Reviewed 2 days ago</td>
+      <td>I love this cafe. Not only are the prices reas...</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Stopped for lunch before going to the ballet a...</td>
-      <td>Pre theatre lunch</td>
+      <td>I was told to go to the Cafe in the Crypt by a...</td>
+      <td>Great venue, good food</td>
       <td>5</td>
-      <td>Reviewed 1 week ago</td>
-      <td>Stopped for lunch before going to the ballet a...</td>
+      <td>Reviewed 2 days ago</td>
+      <td>I was told to go to the Cafe in the Crypt by a...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>My daughter had the fish and chips. The fish w...</td>
-      <td>Late lunch disappointing</td>
-      <td>3</td>
-      <td>Reviewed 1 week ago</td>
-      <td>My daughter had the fish and chips. The fish w...</td>
+      <td>Took some Australian relations here during a v...</td>
+      <td>Novel</td>
+      <td>5</td>
+      <td>Reviewed 5 days ago</td>
+      <td>Took some Australian relations here during a v...</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Literally "dropped in" for an afternoon tea to...</td>
-      <td>Good for Afternoon Tea</td>
-      <td>4</td>
-      <td>Reviewed 2 weeks ago</td>
-      <td>Literally "dropped in" for an afternoon tea to...</td>
+      <td>Visited after walking through Trafalgar Square...</td>
+      <td>Quick drink and snack</td>
+      <td>5</td>
+      <td>Reviewed 1 week ago</td>
+      <td>Visited after walking through Trafalgar Square...</td>
     </tr>
   </tbody>
 </table>
@@ -12281,15 +12293,15 @@ Diagnostics complete!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[281]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">inurl1</span> <span class="o">=</span> <span class="s2">&quot;https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d2570383-Reviews&quot;</span>
 <span class="n">inurl2</span> <span class="o">=</span> <span class="s2">&quot;-Cafe_in_the_Crypt-London_England.html&quot;</span>
 
-<span class="n">df_full</span> <span class="o">=</span> <span class="n">fullscraper</span><span class="p">(</span><span class="n">site</span><span class="o">=</span><span class="s1">&#39;tripadvisor&#39;</span><span class="p">,</span><span class="n">first_url</span><span class="o">=</span><span class="n">inurl1</span><span class="o">+</span><span class="n">inurl2</span><span class="p">,</span><span class="n">url1</span><span class="o">=</span><span class="n">inurl1</span><span class="p">,</span><span class="n">url2</span><span class="o">=</span><span class="n">inurl2</span><span class="p">,</span>\
-                      <span class="n">increment_string1</span><span class="o">=</span><span class="s2">&quot;-or&quot;</span><span class="p">,</span><span class="n">increment_string2</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">total_pages</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>\
-                      <span class="n">increment</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">output_file</span><span class="o">=</span><span class="s1">&#39;testing.csv&#39;</span><span class="p">)</span>
+<span class="n">df_full</span> <span class="o">=</span> <span class="n">fullscraper</span><span class="p">(</span><span class="n">site</span><span class="o">=</span><span class="s1">&#39;tripadvisor&#39;</span><span class="p">,</span><span class="n">first_url</span><span class="o">=</span><span class="n">inurl1</span><span class="o">+</span><span class="n">inurl2</span><span class="p">,</span><span class="n">url1</span><span class="o">=</span><span class="n">inurl1</span><span class="p">,</span>\
+                      <span class="n">url2</span><span class="o">=</span><span class="n">inurl2</span><span class="p">,</span><span class="n">increment_string1</span><span class="o">=</span><span class="s2">&quot;-or&quot;</span><span class="p">,</span><span class="n">increment_string2</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>\
+                      <span class="n">total_pages</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">increment</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">output_file</span><span class="o">=</span><span class="s1">&#39;testing.csv&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12317,11 +12329,12 @@ Getting reviews 1/ 20
 Getting reviews 2/ 20
 Getting reviews 3/ 20
 Getting reviews 4/ 20
+Error in reading - Re-reading
 Getting reviews 5/ 20
+Error in reading - Re-reading
 Getting reviews 6/ 20
 Getting reviews 7/ 20
 Getting reviews 8/ 20
-Error in reading - Re-reading
 Getting reviews 9/ 20
 Getting reviews 10/ 20
 Diagnostics: Checking if dataframes are of equal size...
@@ -12335,10 +12348,14 @@ Getting reviews 12/ 20
 Getting reviews 13/ 20
 Getting reviews 14/ 20
 Getting reviews 15/ 20
+Error in reading - Re-reading
+Error in reading - Re-reading
 Getting reviews 16/ 20
+Error in reading - Re-reading
 Getting reviews 17/ 20
 Getting reviews 18/ 20
 Getting reviews 19/ 20
+Error in reading - Re-reading
 Getting reviews 20/ 20
 Complete!!!
 </pre>
@@ -12360,7 +12377,7 @@ Complete!!!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[282]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_full</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -12376,7 +12393,7 @@ Complete!!!
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[282]:</div>
+<div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -12409,43 +12426,43 @@ Complete!!!
   <tbody>
     <tr>
       <th>0</th>
-      <td>Took some Australian relations here during a v...</td>
-      <td>Novel</td>
-      <td>5</td>
-      <td>Reviewed 3 days ago</td>
-      <td>Took some Australian relations here during a v...</td>
+      <td>On a Friday evening before our late night at t...</td>
+      <td>Crazy busy for Friday dinner</td>
+      <td>3</td>
+      <td>Reviewed yesterday</td>
+      <td>On a Friday evening before our late night at t...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Visited after walking through Trafalgar Square...</td>
-      <td>Quick drink and snack</td>
-      <td>5</td>
-      <td>Reviewed 6 days ago</td>
-      <td>Visited after walking through Trafalgar Square...</td>
+      <td>I love this cafe. Not only are the prices reas...</td>
+      <td>Unusual surroundings for a coffee</td>
+      <td>4</td>
+      <td>Reviewed 2 days ago</td>
+      <td>I love this cafe. Not only are the prices reas...</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Stopped for lunch before going to the ballet a...</td>
-      <td>Pre theatre lunch</td>
+      <td>I was told to go to the Cafe in the Crypt by a...</td>
+      <td>Great venue, good food</td>
       <td>5</td>
-      <td>Reviewed 1 week ago</td>
-      <td>Stopped for lunch before going to the ballet a...</td>
+      <td>Reviewed 2 days ago</td>
+      <td>I was told to go to the Cafe in the Crypt by a...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>My daughter had the fish and chips. The fish w...</td>
-      <td>Late lunch disappointing</td>
-      <td>3</td>
-      <td>Reviewed 1 week ago</td>
-      <td>My daughter had the fish and chips. The fish w...</td>
+      <td>Took some Australian relations here during a v...</td>
+      <td>Novel</td>
+      <td>5</td>
+      <td>Reviewed 5 days ago</td>
+      <td>Took some Australian relations here during a v...</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Literally "dropped in" for an afternoon tea to...</td>
-      <td>Good for Afternoon Tea</td>
-      <td>4</td>
-      <td>Reviewed 2 weeks ago</td>
-      <td>Literally "dropped in" for an afternoon tea to...</td>
+      <td>Visited after walking through Trafalgar Square...</td>
+      <td>Quick drink and snack</td>
+      <td>5</td>
+      <td>Reviewed 1 week ago</td>
+      <td>Visited after walking through Trafalgar Square...</td>
     </tr>
   </tbody>
 </table>
@@ -12469,7 +12486,7 @@ Complete!!!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[283]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_full</span><span class="o">.</span><span class="n">shape</span>
@@ -12485,7 +12502,7 @@ Complete!!!
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[283]:</div>
+<div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -12511,7 +12528,7 @@ Complete!!!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[284]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_full</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -12560,7 +12577,7 @@ memory usage: 7.9+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[285]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_full</span><span class="p">[</span><span class="s1">&#39;Review&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
@@ -12602,7 +12619,7 @@ memory usage: 7.9+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[286]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">grp</span> <span class="o">=</span> <span class="n">df_full</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
@@ -12619,7 +12636,7 @@ memory usage: 7.9+ KB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[286]:</div>
+<div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -12685,7 +12702,7 @@ memory usage: 7.9+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[287]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_full</span><span class="p">[</span><span class="n">df_full</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Lovely&#39;</span><span class="p">]</span>
@@ -12701,7 +12718,7 @@ memory usage: 7.9+ KB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[287]:</div>
+<div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -12733,7 +12750,7 @@ memory usage: 7.9+ KB
   </thead>
   <tbody>
     <tr>
-      <th>91</th>
+      <th>94</th>
       <td>A calm quiet place and comparatively inexpensi...</td>
       <td>Lovely</td>
       <td>5</td>
@@ -12741,7 +12758,7 @@ memory usage: 7.9+ KB
       <td>A calm quiet place and comparatively inexpensi...</td>
     </tr>
     <tr>
-      <th>149</th>
+      <th>152</th>
       <td>Beautiful environment. Busy but well stocked a...</td>
       <td>Lovely</td>
       <td>5</td>
@@ -12778,7 +12795,7 @@ memory usage: 7.9+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[289]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">,</span><span class="n">success</span> <span class="o">=</span> <span class="n">webscrape</span><span class="p">(</span><span class="s2">&quot;https://www.yelp.co.uk/biz/ffionas-restaurant-london?</span><span class="se">\</span>
@@ -12814,7 +12831,7 @@ Diagnostics complete!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[290]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -12830,7 +12847,7 @@ Diagnostics complete!
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[290]:</div>
+<div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -12922,15 +12939,15 @@ Diagnostics complete!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[291]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">inurl1</span> <span class="o">=</span> <span class="s2">&quot;https://www.yelp.co.uk/biz/ffionas-restaurant-london&quot;</span>
 <span class="n">inurl2</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
 
 <span class="n">df_full</span> <span class="o">=</span> <span class="n">fullscraper</span><span class="p">(</span><span class="n">site</span><span class="o">=</span><span class="s1">&#39;yelp&#39;</span><span class="p">,</span><span class="n">first_url</span><span class="o">=</span><span class="n">inurl1</span><span class="o">+</span><span class="n">inurl2</span><span class="p">,</span><span class="n">url1</span><span class="o">=</span><span class="n">inurl1</span><span class="p">,</span><span class="n">url2</span><span class="o">=</span><span class="n">inurl2</span><span class="p">,</span>\
-                      <span class="n">increment_string1</span><span class="o">=</span><span class="s2">&quot;?start=&quot;</span><span class="p">,</span><span class="n">increment_string2</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">total_pages</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>\
-                      <span class="n">increment</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">output_file</span><span class="o">=</span><span class="s1">&#39;testing.csv&#39;</span><span class="p">)</span>
+                      <span class="n">increment_string1</span><span class="o">=</span><span class="s2">&quot;?start=&quot;</span><span class="p">,</span><span class="n">increment_string2</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>\
+                      <span class="n">total_pages</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">increment</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">output_file</span><span class="o">=</span><span class="s1">&#39;testing.csv&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12983,7 +13000,7 @@ Complete!!!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[292]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_full</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -12999,7 +13016,7 @@ Complete!!!
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[292]:</div>
+<div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -13092,7 +13109,7 @@ Complete!!!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[293]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_full</span><span class="o">.</span><span class="n">shape</span>
@@ -13108,7 +13125,7 @@ Complete!!!
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[293]:</div>
+<div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -13134,7 +13151,7 @@ Complete!!!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[294]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_full</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -13183,7 +13200,7 @@ memory usage: 7.9+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[295]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_full</span><span class="p">[</span><span class="s1">&#39;Review&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
