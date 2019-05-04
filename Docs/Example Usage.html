@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>WS-AllScraping</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Example Usage</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11771,30 +11771,30 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Web-Scraper">Web Scraper<a class="anchor-link" href="#Web-Scraper">&#182;</a></h1>
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">import</span> <span class="nn">WebScraper</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="k">import</span> <span class="n">html</span>
+</pre></div>
+
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Versions">Versions<a class="anchor-link" href="#Versions">&#182;</a></h2>
-</div>
-</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">platform</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Python version: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">platform</span><span class="o">.</span><span class="n">python_version</span><span class="p">()))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">WebScraper</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11807,36 +11807,27 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt"></div>
+<div class="prompt output_prompt">Out[50]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Python version: 3.6.4
-</pre>
-</div>
-</div>
 
-</div>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;module &#39;WebScraper&#39; from &#39;C:\\Users\\HVAD\\Documents\\MyStuff\\TempWebScraping\\WebScraping\\Code\\WebScraper.py&#39;&gt;</pre>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Import-Libraries">Import Libraries<a class="anchor-link" href="#Import-Libraries">&#182;</a></h2>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">lxml</span> <span class="k">import</span> <span class="n">html</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ms</span> <span class="o">=</span> <span class="n">WebScraper</span><span class="o">.</span><span class="n">WebScraper</span><span class="p">(</span><span class="s2">&quot;https://www.tripadvisor.co.uk/Attraction_Review-g190384-d6755801-Reviews-The_House_of_Dionysus-Paphos_Paphos_District.html&quot;</span><span class="p">,</span> <span class="s1">&#39;tripadvisor&#39;</span><span class="p">,</span> <span class="n">silent</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11844,315 +11835,12 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Functions">Functions<a class="anchor-link" href="#Functions">&#182;</a></h2>
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">findStars</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">site</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">site</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;tripadvisor&#39;</span><span class="p">:</span>
-        <span class="n">x2</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;bubble_5&quot;&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mf">0.5</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="s1">&#39;bubble_10&quot;&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mi">1</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="s1">&#39;bubble_15&quot;&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mf">1.5</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="s1">&#39;bubble_20&quot;&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mi">2</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="s1">&#39;bubble_25&quot;&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mf">2.5</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="s1">&#39;bubble_30&quot;&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mi">3</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="s1">&#39;bubble_35&quot;&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mf">3.5</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="s1">&#39;bubble_40&quot;&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mi">4</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="s1">&#39;bubble_45&quot;&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mf">4.5</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="s1">&#39;bubble_50&quot;&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mi">5</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="mi">0</span>
-    <span class="k">elif</span> <span class="n">site</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;yelp&#39;</span><span class="p">:</span>
-        <span class="n">x2</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;0.5 star&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mf">0.5</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="s1">&#39;1.0 star&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mi">1</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="s1">&#39;1.5 star&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mf">1.5</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="s1">&#39;2.0 star&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mi">2</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="s1">&#39;2.5 star&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mf">2.5</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="s1">&#39;3.0 star&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mi">3</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="s1">&#39;3.5 star&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mf">3.5</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="s1">&#39;4.0 star&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mi">4</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="s1">&#39;4.5 star&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mf">4.5</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="s1">&#39;5.0 star&#39;</span> <span class="ow">in</span> <span class="n">x2</span><span class="p">):</span>
-            <span class="k">return</span> <span class="mi">5</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="mi">0</span>
-
-<span class="c1"># Diagnostics</span>
-<span class="k">def</span> <span class="nf">diagnostics</span><span class="p">(</span><span class="n">silent</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    This function checks that the lists given as arguments are of equal sizes</span>
-<span class="sd">    args: An arbitrary number of lists</span>
-<span class="sd">    silent: A boolean indicating whether diagnostic results are to be displayed</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Diagnostics: Checking if dataframes are of equal size...&#39;</span><span class="p">)</span>
-    <span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Size: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">args</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">]</span>
-    
-    <span class="n">l</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">!=</span> <span class="n">l</span><span class="p">:</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unequal Sizes!&#39;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="kc">False</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Diagnostics complete!&#39;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="kc">True</span>
-
-<span class="k">def</span> <span class="nf">webscrape</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="n">silent</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    This functioni scrapes relevant review tags from a website url</span>
-<span class="sd">    url: A string url</span>
-<span class="sd">    site: A string indicating the site name to be scraped</span>
-<span class="sd">    silent: A boolean indicating whether diagnostic results are to be displayed</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="c1"># A variable to store the success of the read</span>
-    <span class="n">success</span> <span class="o">=</span> <span class="kc">False</span>
-
-    <span class="c1"># Get the request object from the server</span>
-    <span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    
-    <span class="c1"># Convert the request content to an html object</span>
-    <span class="n">top</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-    
-    <span class="c1"># These are the class names</span>
-    <span class="n">rev_class_1</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    <span class="n">rev_class_2</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    <span class="n">rat_class</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    <span class="n">title_class</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    <span class="n">dat_class</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    <span class="n">dat_class_2</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    
-    <span class="k">if</span> <span class="n">site</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;tripadvisor&#39;</span><span class="p">:</span>
-        <span class="n">rev_class_1</span> <span class="o">=</span> <span class="s1">&#39;innerBubble&#39;</span>
-        <span class="n">rev_class_2</span> <span class="o">=</span> <span class="s1">&#39;entry&#39;</span>
-        <span class="n">rat_class</span> <span class="o">=</span> <span class="s1">&#39;review-container&#39;</span>
-        <span class="n">titl_class</span> <span class="o">=</span> <span class="s1">&#39;noQuotes&#39;</span>
-        <span class="n">dat_class</span> <span class="o">=</span> <span class="s1">&#39;ratingDate&#39;</span>
-        
-        <span class="c1"># Get all the innerBubble classes which contain the reviews as well as </span>
-        <span class="c1"># any responses to these reviews</span>
-        <span class="n">reviews</span> <span class="o">=</span> <span class="n">top</span><span class="o">.</span><span class="n">find_class</span><span class="p">(</span><span class="n">rev_class_1</span><span class="p">)</span>
-        
-        <span class="c1"># Loop through the reviews</span>
-        <span class="n">reviews_array</span> <span class="o">=</span> <span class="p">[]</span>
-            
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">reviews</span><span class="p">:</span>
-            <span class="n">reviews_array</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="o">.</span><span class="n">find_class</span><span class="p">(</span><span class="n">rev_class_2</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">text_content</span><span class="p">())</span>
-        
-        <span class="c1"># Get all the review containers</span>
-        <span class="n">ratings</span><span class="o">=</span><span class="n">top</span><span class="o">.</span><span class="n">find_class</span><span class="p">(</span><span class="n">rat_class</span><span class="p">)</span>
-
-        <span class="c1"># Within each review container is a class, the name of </span>
-        <span class="c1"># which determines the rating to display</span>
-        <span class="c1"># We use the findStars function to determine the rating </span>
-        <span class="c1"># from the class name</span>
-        <span class="n">ratings_array</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ratings</span><span class="p">:</span>
-            <span class="n">ratings_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">findStars</span><span class="p">(</span><span class="n">html</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">site</span><span class="p">))</span>
-        
-        <span class="c1"># The titles of the reviews are within the &#39;noQuotes&#39; tags</span>
-        <span class="n">titles</span><span class="o">=</span><span class="n">top</span><span class="o">.</span><span class="n">find_class</span><span class="p">(</span><span class="n">titl_class</span><span class="p">)</span>
-
-        <span class="c1"># Get the titles</span>
-        <span class="n">titles_array</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">titles</span><span class="p">:</span>
-            <span class="n">titles_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">text_content</span><span class="p">())</span>
-        
-        <span class="c1"># Get the rating date tags</span>
-        <span class="n">dates</span><span class="o">=</span><span class="n">top</span><span class="o">.</span><span class="n">find_class</span><span class="p">(</span><span class="n">dat_class</span><span class="p">)</span>
-
-        <span class="c1"># Get the dates</span>
-        <span class="n">dates_array</span><span class="o">=</span><span class="p">[]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">:</span>
-            <span class="n">dates_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">text_content</span><span class="p">())</span>
-            
-        <span class="c1"># Diagnostics</span>
-        <span class="n">success</span> <span class="o">=</span> <span class="n">diagnostics</span><span class="p">(</span><span class="n">silent</span><span class="p">,</span><span class="n">ratings_array</span><span class="p">,</span><span class="n">reviews_array</span><span class="p">,</span>\
-                              <span class="n">dates_array</span><span class="p">,</span><span class="n">titles_array</span><span class="p">)</span>
-        
-    <span class="k">elif</span> <span class="n">site</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;yelp&#39;</span><span class="p">:</span>
-        <span class="n">rev_class_1</span> <span class="o">=</span> <span class="s1">&#39;review-content&#39;</span>
-        <span class="n">rev_class_2</span> <span class="o">=</span> <span class="s1">&#39;p&#39;</span>
-        <span class="n">rat_class</span> <span class="o">=</span> <span class="s1">&#39;biz-rating&#39;</span>
-        <span class="n">dat_class_2</span> <span class="o">=</span> <span class="s1">&#39;rating-qualifier&#39;</span>
-        
-        <span class="c1"># Get all the innerBubble classes which contain the reviews as well as </span>
-        <span class="c1"># any responses to these reviews</span>
-        <span class="n">reviews</span> <span class="o">=</span> <span class="n">top</span><span class="o">.</span><span class="n">find_class</span><span class="p">(</span><span class="n">rev_class_1</span><span class="p">)</span>
-        
-        <span class="c1"># Loop through the reviews</span>
-        <span class="n">reviews_array</span> <span class="o">=</span> <span class="p">[]</span>
-            
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">reviews</span><span class="p">:</span>
-            <span class="n">reviews_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">rev_class_2</span><span class="p">)</span><span class="o">.</span><span class="n">text_content</span><span class="p">())</span>
-        
-        <span class="c1"># Set empty the titles</span>
-        <span class="n">titles_array</span> <span class="o">=</span> <span class="n">reviews_array</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        
-        <span class="c1"># Within each review-content is a class called biz-rating, the name of </span>
-        <span class="c1"># which determines the rating to display</span>
-        <span class="c1"># We use the findStars function to determine the rating from the class name</span>
-        <span class="n">ratings_array</span> <span class="o">=</span> <span class="p">[]</span>
-
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">getattr</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39;find_class&#39;</span><span class="p">)(</span><span class="n">rat_class</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">reviews</span><span class="p">]:</span>
-            <span class="n">ratings_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">findStars</span><span class="p">(</span><span class="n">html</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="s1">&#39;yelp&#39;</span><span class="p">))</span>   
-        
-        <span class="c1"># Get the dates. When a review is updated, the word updated review is present</span>
-        <span class="c1"># in the dates string</span>
-        <span class="n">dates_array</span><span class="o">=</span><span class="p">[]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">reviews</span><span class="p">:</span>
-            <span class="n">dates_array</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="o">.</span><span class="n">find_class</span><span class="p">(</span><span class="n">dat_class_2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text_content</span><span class="p">())</span><span class="o">.</span>\
-                               <span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Updated review&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
-        
-        <span class="c1"># Diagnostics</span>
-        <span class="n">success</span> <span class="o">=</span> <span class="n">diagnostics</span><span class="p">(</span><span class="n">silent</span><span class="p">,</span><span class="n">ratings_array</span><span class="p">,</span><span class="n">reviews_array</span><span class="p">,</span><span class="n">dates_array</span><span class="p">)</span>
-        
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The site </span><span class="si">{}</span><span class="s1"> is not supported&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">site</span><span class="p">))</span>
-        <span class="k">return</span> <span class="kc">False</span>
-
-    <span class="c1"># Convert to a dataframe</span>
-    <span class="n">df_review</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">reviews_array</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Review&#39;</span><span class="p">])</span>
-    <span class="n">df_ratings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">ratings_array</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Rating&#39;</span><span class="p">])</span>
-    <span class="n">df_titles</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">titles_array</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
-    <span class="n">df_reviewdates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dates_array</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
-    
-    <span class="c1"># Consolidate into a dataframe</span>
-    <span class="n">df_fullreview</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_review</span><span class="p">,</span><span class="n">df_titles</span><span class="p">,</span><span class="n">df_ratings</span><span class="p">[</span><span class="s1">&#39;Rating&#39;</span><span class="p">],</span>\
-                               <span class="n">df_reviewdates</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">df_fullreview</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    
-    <span class="c1"># Combine review and title into a single column</span>
-    <span class="n">df_fullreview</span><span class="p">[</span><span class="s1">&#39;fullreview&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_fullreview</span><span class="p">[</span><span class="s1">&#39;Review&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">df_fullreview</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
-
-    <span class="k">return</span> <span class="n">df_fullreview</span><span class="p">,</span><span class="n">success</span>
-
-<span class="k">def</span> <span class="nf">fullscraper</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">first_url</span><span class="p">,</span> <span class="n">url1</span><span class="p">,</span> <span class="n">url2</span><span class="p">,</span> <span class="n">increment_string1</span><span class="p">,</span> <span class="n">increment_string2</span><span class="p">,</span>\
-                <span class="n">total_pages</span><span class="p">,</span> <span class="n">increment</span><span class="p">,</span> <span class="n">output_file</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    This function increments the site url to the next page according to update </span>
-<span class="sd">    criteria and scrapes that page. The full url of subsequent pages is </span>
-<span class="sd">    url = url1 + increment_string1 + url2 + increment_string2. </span>
-<span class="sd">    In cases of error in reading information, attempts are made to re-read data.</span>
-<span class="sd">    first_url: A string url. The main url page</span>
-<span class="sd">    url1, url2: The static parts of the urls that do not change in incrementation</span>
-<span class="sd">    increment_string1, increment_string2: The parts of the url that change</span>
-<span class="sd">    total_pages: The number of total pages. Integer</span>
-<span class="sd">    output_file: The file name to output. If empty string, it doesn&#39;t save a file</span>
-<span class="sd">    site: A string indicating the site name to be scraped</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">success</span> <span class="o">=</span> <span class="kc">False</span>
-    
-    <span class="c1"># Main data frame</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-    
-    <span class="c1"># Progress output</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Getting reviews &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;/ &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">total_pages</span><span class="p">))</span>
-    
-    <span class="c1"># url incrementation differs per website</span>
-    <span class="k">if</span> <span class="n">site</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;tripadvisor&#39;</span><span class="p">,</span><span class="s1">&#39;yelp&#39;</span><span class="p">]:</span>
-        <span class="k">while</span> <span class="ow">not</span> <span class="n">success</span><span class="p">:</span>
-            <span class="n">df</span><span class="p">,</span><span class="n">success</span> <span class="o">=</span> <span class="n">webscrape</span><span class="p">(</span><span class="n">first_url</span><span class="p">,</span><span class="n">site</span><span class="p">,</span><span class="kc">False</span><span class="p">)</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">success</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error in reading - Re-reading&#39;</span><span class="p">)</span>
-                
-            <span class="c1"># Wait for 1 second</span>
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-                
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Getting reviews &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;/ &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">total_pages</span><span class="p">))</span>
-        
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">total_pages</span><span class="p">):</span>
-            <span class="n">success</span> <span class="o">=</span> <span class="kc">False</span>
-            <span class="n">url_temp</span> <span class="o">=</span> <span class="n">url1</span> <span class="o">+</span> <span class="n">increment_string1</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">increment</span><span class="p">)</span> <span class="o">+</span>\
-            <span class="n">increment_string2</span> <span class="o">+</span> <span class="n">url2</span>
-            
-            <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">%</span><span class="k">10</span> == 0) or (i == total_pages):
-                <span class="k">while</span> <span class="ow">not</span> <span class="n">success</span><span class="p">:</span>
-                    <span class="n">df_temp</span><span class="p">,</span><span class="n">success</span> <span class="o">=</span> <span class="n">webscrape</span><span class="p">(</span><span class="n">url_temp</span><span class="p">,</span><span class="n">site</span><span class="p">,</span><span class="kc">False</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="ow">not</span> <span class="n">success</span><span class="p">:</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error in reading - Re-reading&#39;</span><span class="p">)</span>
-                        
-                    <span class="c1"># Wait for 1 second</span>
-                    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">while</span> <span class="ow">not</span> <span class="n">success</span><span class="p">:</span>
-                    <span class="n">df_temp</span><span class="p">,</span><span class="n">success</span> <span class="o">=</span> <span class="n">webscrape</span><span class="p">(</span><span class="n">url_temp</span><span class="p">,</span><span class="n">site</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="ow">not</span> <span class="n">success</span><span class="p">:</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error in reading - Re-reading&#39;</span><span class="p">)</span>
-                        
-                    <span class="c1"># Wait for 1 second</span>
-                    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-            
-            <span class="c1"># Build the dataframe</span>
-            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span><span class="n">df_temp</span><span class="p">])</span>
-            
-            <span class="c1"># Print progress</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Getting reviews &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;/ &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">total_pages</span><span class="p">))</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Complete!!!&#39;</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Examples">Examples<a class="anchor-link" href="#Examples">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Web-Scrape-one-page-from-tripadvisor">Web Scrape one page from tripadvisor<a class="anchor-link" href="#Web-Scrape-one-page-from-tripadvisor">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">,</span><span class="n">success</span> <span class="o">=</span> <span class="n">webscrape</span><span class="p">(</span><span class="s2">&quot;https://www.tripadvisor.co.uk/Restaurant_Review-g186338-</span><span class="se">\</span>
-<span class="s2">d2570383-Reviews-Cafe_in_the_Crypt-London_England.html&quot;</span><span class="p">,</span><span class="s1">&#39;tripadvisor&#39;</span><span class="p">,</span><span class="kc">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ms</span><span class="o">.</span><span class="n">scrape</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12179,16 +11867,63 @@ Diagnostics complete!
 </div>
 </div>
 
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[52]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(                                              Review  \
+ 0  This is awesome and is everything books etc sa...   
+ 1  Increadible mosiacs, large site, bargain at on...   
+ 2  This site is vast and we took our time visitin...   
+ 3  Brilliant day out to this archaeological site....   
+ 4  It’s a really beautiful archeological place in...   
+ 5  Came here as a part of the Pahpos site tour.  ...   
+ 6  We arrived late morning because our guide book...   
+ 7  We visited the mosaics in the cool of the morn...   
+ 8  Paphos Archaeological Park is an important anc...   
+ 9  Amazing site.  Could have done with more signa...   
+ 
+                                   title  Rating                   date  \
+ 0                           Spectacular       5   Reviewed 2 days ago    
+ 1       A must see if you are in Paphos       5   Reviewed 2 days ago    
+ 2                         Simply superb       5   Reviewed 3 days ago    
+ 3                           Fab day Out       5   Reviewed 4 days ago    
+ 4                    A trip to the past       5   Reviewed 5 days ago    
+ 5    Great view of a site within a site       4   Reviewed 1 week ago    
+ 6             Give yourself enough time       5   Reviewed 1 week ago    
+ 7                       Amazing mosaics       5   Reviewed 1 week ago    
+ 8  Very interesting archeological place       4  Reviewed 2 weeks ago    
+ 9                              Stunning       5  Reviewed 3 weeks ago    
+ 
+                                           fullreview  
+ 0  This is awesome and is everything books etc sa...  
+ 1  Increadible mosiacs, large site, bargain at on...  
+ 2  This site is vast and we took our time visitin...  
+ 3  Brilliant day out to this archaeological site....  
+ 4  It’s a really beautiful archeological place in...  
+ 5  Came here as a part of the Pahpos site tour.  ...  
+ 6  We arrived late morning because our guide book...  
+ 7  We visited the mosaics in the cool of the morn...  
+ 8  Paphos Archaeological Park is an important anc...  
+ 9  Amazing site.  Could have done with more signa...  , True)</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ms</span><span class="o">.</span><span class="n">reviews</span>
 </pre></div>
 
 </div>
@@ -12201,7 +11936,7 @@ Diagnostics complete!
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[21]:</div>
+<div class="prompt output_prompt">Out[53]:</div>
 
 
 
@@ -12234,43 +11969,83 @@ Diagnostics complete!
   <tbody>
     <tr>
       <th>0</th>
-      <td>Awesome in all regards. Unpretentious, fun, wa...</td>
-      <td>Awesome in all regards. Unpretentious, fun, wa...</td>
+      <td>This is awesome and is everything books etc sa...</td>
+      <td>Spectacular</td>
       <td>5</td>
-      <td>30/11/2018</td>
-      <td>Awesome in all regards. Unpretentious, fun, wa...</td>
+      <td>Reviewed 2 days ago</td>
+      <td>This is awesome and is everything books etc sa...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>We were so happy when we called (last minute) ...</td>
-      <td>We were so happy when we called (last minute) ...</td>
-      <td>4</td>
-      <td>5/1/2019</td>
-      <td>We were so happy when we called (last minute) ...</td>
+      <td>Increadible mosiacs, large site, bargain at on...</td>
+      <td>A must see if you are in Paphos</td>
+      <td>5</td>
+      <td>Reviewed 2 days ago</td>
+      <td>Increadible mosiacs, large site, bargain at on...</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>So I honestly picked this place strictly based...</td>
-      <td>So I honestly picked this place strictly based...</td>
+      <td>This site is vast and we took our time visitin...</td>
+      <td>Simply superb</td>
       <td>5</td>
-      <td>20/11/2018</td>
-      <td>So I honestly picked this place strictly based...</td>
+      <td>Reviewed 3 days ago</td>
+      <td>This site is vast and we took our time visitin...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>This was our first dinner in London and we did...</td>
-      <td>This was our first dinner in London and we did...</td>
+      <td>Brilliant day out to this archaeological site....</td>
+      <td>Fab day Out</td>
       <td>5</td>
-      <td>8/10/2018</td>
-      <td>This was our first dinner in London and we did...</td>
+      <td>Reviewed 4 days ago</td>
+      <td>Brilliant day out to this archaeological site....</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Absolute gem! We were so happy when we called ...</td>
-      <td>Absolute gem! We were so happy when we called ...</td>
+      <td>It’s a really beautiful archeological place in...</td>
+      <td>A trip to the past</td>
       <td>5</td>
-      <td>5/11/2018</td>
-      <td>Absolute gem! We were so happy when we called ...</td>
+      <td>Reviewed 5 days ago</td>
+      <td>It’s a really beautiful archeological place in...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Came here as a part of the Pahpos site tour.  ...</td>
+      <td>Great view of a site within a site</td>
+      <td>4</td>
+      <td>Reviewed 1 week ago</td>
+      <td>Came here as a part of the Pahpos site tour.  ...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>We arrived late morning because our guide book...</td>
+      <td>Give yourself enough time</td>
+      <td>5</td>
+      <td>Reviewed 1 week ago</td>
+      <td>We arrived late morning because our guide book...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>We visited the mosaics in the cool of the morn...</td>
+      <td>Amazing mosaics</td>
+      <td>5</td>
+      <td>Reviewed 1 week ago</td>
+      <td>We visited the mosaics in the cool of the morn...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Paphos Archaeological Park is an important anc...</td>
+      <td>Very interesting archeological place</td>
+      <td>4</td>
+      <td>Reviewed 2 weeks ago</td>
+      <td>Paphos Archaeological Park is an important anc...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Amazing site.  Could have done with more signa...</td>
+      <td>Stunning</td>
+      <td>5</td>
+      <td>Reviewed 3 weeks ago</td>
+      <td>Amazing site.  Could have done with more signa...</td>
     </tr>
   </tbody>
 </table>
@@ -12285,10 +12060,11 @@ Diagnostics complete!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pret</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">inurl1</span> <span class="o">=</span> <span class="s2">&quot;https://www.tripadvisor.co.uk/Attraction_Review-g190384-d6755801-Reviews&quot;</span>
+<span class="n">inurl2</span> <span class="o">=</span> <span class="s2">&quot;-The_House_of_Dionysus-Paphos_Paphos_District.html&quot;</span>
 </pre></div>
 
 </div>
@@ -12296,25 +12072,27 @@ Diagnostics complete!
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Web-Scrape-20-pages-from-tripadvisor">Web Scrape 20 pages from tripadvisor<a class="anchor-link" href="#Web-Scrape-20-pages-from-tripadvisor">&#182;</a></h3>
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ms</span> <span class="o">=</span> <span class="n">WebScraper</span><span class="o">.</span><span class="n">WebScraper</span><span class="p">(</span><span class="n">site</span><span class="o">=</span><span class="s1">&#39;tripadvisor&#39;</span><span class="p">,</span><span class="n">url1</span><span class="o">=</span><span class="n">inurl1</span><span class="p">,</span>\
+                      <span class="n">url2</span><span class="o">=</span><span class="n">inurl2</span><span class="p">,</span><span class="n">increment_string1</span><span class="o">=</span><span class="s2">&quot;-or&quot;</span><span class="p">,</span><span class="n">increment_string2</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>\
+                      <span class="n">total_pages</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">increment</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">silent</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">inurl1</span> <span class="o">=</span> <span class="s2">&quot;https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d2570383-Reviews&quot;</span>
-<span class="n">inurl2</span> <span class="o">=</span> <span class="s2">&quot;-Cafe_in_the_Crypt-London_England.html&quot;</span>
-
-<span class="n">df_full</span> <span class="o">=</span> <span class="n">fullscraper</span><span class="p">(</span><span class="n">site</span><span class="o">=</span><span class="s1">&#39;tripadvisor&#39;</span><span class="p">,</span><span class="n">first_url</span><span class="o">=</span><span class="n">inurl1</span><span class="o">+</span><span class="n">inurl2</span><span class="p">,</span><span class="n">url1</span><span class="o">=</span><span class="n">inurl1</span><span class="p">,</span>\
-                      <span class="n">url2</span><span class="o">=</span><span class="n">inurl2</span><span class="p">,</span><span class="n">increment_string1</span><span class="o">=</span><span class="s2">&quot;-or&quot;</span><span class="p">,</span><span class="n">increment_string2</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>\
-                      <span class="n">total_pages</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">increment</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">output_file</span><span class="o">=</span><span class="s1">&#39;testing.csv&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ms</span><span class="o">.</span><span class="n">fullscraper</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12339,16 +12117,68 @@ Size: 10
 Size: 10
 Diagnostics complete!
 Getting reviews 1/ 20
+Diagnostics: Checking if dataframes are of equal size...
+Size: 10
+Size: 10
+Size: 10
+Size: 10
+Diagnostics complete!
 Getting reviews 2/ 20
+Diagnostics: Checking if dataframes are of equal size...
+Size: 10
+Size: 10
+Size: 10
+Size: 10
+Diagnostics complete!
 Getting reviews 3/ 20
+Diagnostics: Checking if dataframes are of equal size...
+Size: 10
+Size: 10
+Size: 10
+Size: 10
+Diagnostics complete!
 Getting reviews 4/ 20
-Error in reading - Re-reading
+Diagnostics: Checking if dataframes are of equal size...
+Size: 10
+Size: 10
+Size: 10
+Size: 10
+Diagnostics complete!
 Getting reviews 5/ 20
-Error in reading - Re-reading
+Diagnostics: Checking if dataframes are of equal size...
+Size: 10
+Size: 10
+Size: 10
+Size: 10
+Diagnostics complete!
 Getting reviews 6/ 20
+Diagnostics: Checking if dataframes are of equal size...
+Size: 10
+Size: 10
+Size: 10
+Size: 10
+Diagnostics complete!
 Getting reviews 7/ 20
+Diagnostics: Checking if dataframes are of equal size...
+Size: 10
+Size: 10
+Size: 10
+Size: 10
+Diagnostics complete!
 Getting reviews 8/ 20
+Diagnostics: Checking if dataframes are of equal size...
+Size: 10
+Size: 10
+Size: 10
+Size: 10
+Diagnostics complete!
 Getting reviews 9/ 20
+Diagnostics: Checking if dataframes are of equal size...
+Size: 10
+Size: 10
+Size: 10
+Size: 10
+Diagnostics complete!
 Getting reviews 10/ 20
 Diagnostics: Checking if dataframes are of equal size...
 Size: 10
@@ -12357,56 +12187,77 @@ Size: 10
 Size: 10
 Diagnostics complete!
 Getting reviews 11/ 20
+Diagnostics: Checking if dataframes are of equal size...
+Size: 10
+Size: 10
+Size: 10
+Size: 10
+Diagnostics complete!
 Getting reviews 12/ 20
+Diagnostics: Checking if dataframes are of equal size...
+Size: 10
+Size: 10
+Size: 10
+Size: 10
+Diagnostics complete!
 Getting reviews 13/ 20
+Diagnostics: Checking if dataframes are of equal size...
+Size: 10
+Size: 10
+Size: 10
+Size: 10
+Diagnostics complete!
 Getting reviews 14/ 20
+Diagnostics: Checking if dataframes are of equal size...
+Size: 10
+Size: 10
+Size: 10
+Size: 10
+Diagnostics complete!
 Getting reviews 15/ 20
-Error in reading - Re-reading
-Error in reading - Re-reading
+Diagnostics: Checking if dataframes are of equal size...
+Size: 10
+Size: 10
+Size: 10
+Size: 10
+Diagnostics complete!
 Getting reviews 16/ 20
-Error in reading - Re-reading
+Diagnostics: Checking if dataframes are of equal size...
+Size: 10
+Size: 10
+Size: 10
+Size: 10
+Diagnostics complete!
 Getting reviews 17/ 20
+Diagnostics: Checking if dataframes are of equal size...
+Size: 10
+Size: 10
+Size: 10
+Size: 10
+Diagnostics complete!
 Getting reviews 18/ 20
+Diagnostics: Checking if dataframes are of equal size...
+Size: 10
+Size: 10
+Size: 10
+Size: 10
+Diagnostics complete!
 Getting reviews 19/ 20
-Error in reading - Re-reading
+Diagnostics: Checking if dataframes are of equal size...
+Size: 10
+Size: 10
+Size: 10
+Size: 10
+Diagnostics complete!
 Getting reviews 20/ 20
 Complete!!!
 </pre>
 </div>
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We look at the first 5 rows:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_full</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[7]:</div>
+<div class="prompt output_prompt">Out[56]:</div>
 
 
 
@@ -12439,46 +12290,495 @@ Complete!!!
   <tbody>
     <tr>
       <th>0</th>
-      <td>On a Friday evening before our late night at t...</td>
-      <td>Crazy busy for Friday dinner</td>
-      <td>3</td>
-      <td>Reviewed yesterday</td>
-      <td>On a Friday evening before our late night at t...</td>
+      <td>This is awesome and is everything books etc sa...</td>
+      <td>Spectacular</td>
+      <td>5</td>
+      <td>Reviewed 2 days ago</td>
+      <td>This is awesome and is everything books etc sa...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>I love this cafe. Not only are the prices reas...</td>
-      <td>Unusual surroundings for a coffee</td>
-      <td>4</td>
+      <td>Increadible mosiacs, large site, bargain at on...</td>
+      <td>A must see if you are in Paphos</td>
+      <td>5</td>
       <td>Reviewed 2 days ago</td>
-      <td>I love this cafe. Not only are the prices reas...</td>
+      <td>Increadible mosiacs, large site, bargain at on...</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>I was told to go to the Cafe in the Crypt by a...</td>
-      <td>Great venue, good food</td>
+      <td>This site is vast and we took our time visitin...</td>
+      <td>Simply superb</td>
       <td>5</td>
-      <td>Reviewed 2 days ago</td>
-      <td>I was told to go to the Cafe in the Crypt by a...</td>
+      <td>Reviewed 3 days ago</td>
+      <td>This site is vast and we took our time visitin...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Took some Australian relations here during a v...</td>
-      <td>Novel</td>
+      <td>Brilliant day out to this archaeological site....</td>
+      <td>Fab day Out</td>
       <td>5</td>
-      <td>Reviewed 5 days ago</td>
-      <td>Took some Australian relations here during a v...</td>
+      <td>Reviewed 4 days ago</td>
+      <td>Brilliant day out to this archaeological site....</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Visited after walking through Trafalgar Square...</td>
-      <td>Quick drink and snack</td>
+      <td>It’s a really beautiful archeological place in...</td>
+      <td>A trip to the past</td>
+      <td>5</td>
+      <td>Reviewed 5 days ago</td>
+      <td>It’s a really beautiful archeological place in...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Came here as a part of the Pahpos site tour.  ...</td>
+      <td>Great view of a site within a site</td>
+      <td>4</td>
+      <td>Reviewed 1 week ago</td>
+      <td>Came here as a part of the Pahpos site tour.  ...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>We arrived late morning because our guide book...</td>
+      <td>Give yourself enough time</td>
       <td>5</td>
       <td>Reviewed 1 week ago</td>
-      <td>Visited after walking through Trafalgar Square...</td>
+      <td>We arrived late morning because our guide book...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>We visited the mosaics in the cool of the morn...</td>
+      <td>Amazing mosaics</td>
+      <td>5</td>
+      <td>Reviewed 1 week ago</td>
+      <td>We visited the mosaics in the cool of the morn...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Paphos Archaeological Park is an important anc...</td>
+      <td>Very interesting archeological place</td>
+      <td>4</td>
+      <td>Reviewed 2 weeks ago</td>
+      <td>Paphos Archaeological Park is an important anc...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Amazing site.  Could have done with more signa...</td>
+      <td>Stunning</td>
+      <td>5</td>
+      <td>Reviewed 3 weeks ago</td>
+      <td>Amazing site.  Could have done with more signa...</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Where to start? This Archaeological park is ab...</td>
+      <td>Don't miss it</td>
+      <td>5</td>
+      <td>Reviewed 3 weeks ago</td>
+      <td>Where to start? This Archaeological park is ab...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Amazing place to visit lots to see and the his...</td>
+      <td>Amazing</td>
+      <td>5</td>
+      <td>Reviewed 4 weeks ago</td>
+      <td>Amazing place to visit lots to see and the his...</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Really enjoyed spending time walking around th...</td>
+      <td>Interesting</td>
+      <td>5</td>
+      <td>Reviewed 5 weeks ago</td>
+      <td>Really enjoyed spending time walking around th...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>The Mosaic Houses are The Must See experience ...</td>
+      <td>Stunning Mosaics ... not to be missed.</td>
+      <td>5</td>
+      <td>Reviewed 28 March 2019</td>
+      <td>The Mosaic Houses are The Must See experience ...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>I was here in February 2019. Weather from 22 d...</td>
+      <td>I was here in February 2019. Weather from 22 d...</td>
+      <td>5</td>
+      <td>Reviewed 25 March 2019</td>
+      <td>I was here in February 2019. Weather from 22 d...</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Loved exploring this place. Beautiful mosaics ...</td>
+      <td>An archaeological treat</td>
+      <td>5</td>
+      <td>Reviewed 22 March 2019</td>
+      <td>Loved exploring this place. Beautiful mosaics ...</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Well worth a visit one E 4.50 ticket gets you ...</td>
+      <td>Interesting site, amazing mosaics only E4.50 e...</td>
+      <td>5</td>
+      <td>Reviewed 22 March 2019</td>
+      <td>Well worth a visit one E 4.50 ticket gets you ...</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Well worth visiting as part of the Archaeologi...</td>
+      <td>Fantastic Mosaics.</td>
+      <td>5</td>
+      <td>Reviewed 21 March 2019</td>
+      <td>Well worth visiting as part of the Archaeologi...</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Great place to visit and not very expensive.  ...</td>
+      <td>Beautiful place</td>
+      <td>5</td>
+      <td>Reviewed 19 March 2019</td>
+      <td>Great place to visit and not very expensive.  ...</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Loved exploring this place .children wouldn’t ...</td>
+      <td>Fab</td>
+      <td>5</td>
+      <td>Reviewed 8 March 2019</td>
+      <td>Loved exploring this place .children wouldn’t ...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Excellent spot and well worth\nthe price of ad...</td>
+      <td>Excellent.</td>
+      <td>5</td>
+      <td>Reviewed 28 February 2019</td>
+      <td>Excellent spot and well worth\nthe price of ad...</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>this is well worth aq visit, excellent value f...</td>
+      <td>ancient riuns</td>
+      <td>5</td>
+      <td>Reviewed 26 February 2019</td>
+      <td>this is well worth aq visit, excellent value f...</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>this place was not really advertised and cost ...</td>
+      <td>wow what a gem</td>
+      <td>5</td>
+      <td>Reviewed 19 February 2019</td>
+      <td>this place was not really advertised and cost ...</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>This is the biggest ‘House’ with more mosaics ...</td>
+      <td>Mosaics in abundance !</td>
+      <td>5</td>
+      <td>Reviewed 14 February 2019</td>
+      <td>This is the biggest ‘House’ with more mosaics ...</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>The House of Dionysus is the gem within the ge...</td>
+      <td>The highlight within Paphos' gem!</td>
+      <td>5</td>
+      <td>Reviewed 3 February 2019</td>
+      <td>The House of Dionysus is the gem within the ge...</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>The best mosaics I have ever seen. The park is...</td>
+      <td>Brilliant mosaics</td>
+      <td>5</td>
+      <td>Reviewed 30 January 2019</td>
+      <td>The best mosaics I have ever seen. The park is...</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>This site seems to have expanded over the past...</td>
+      <td>Fascinating</td>
+      <td>5</td>
+      <td>Reviewed 27 January 2019</td>
+      <td>This site seems to have expanded over the past...</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>This is a must if staying in Paphos, the histo...</td>
+      <td>Great afternoon out. Amazing history</td>
+      <td>5</td>
+      <td>Reviewed 13 January 2019</td>
+      <td>This is a must if staying in Paphos, the histo...</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>My goodness the history in this area is brilli...</td>
+      <td>Interesting</td>
+      <td>5</td>
+      <td>Reviewed 8 January 2019</td>
+      <td>My goodness the history in this area is brilli...</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Entrance 4.50, 2.25 oaps Good stroll for an ho...</td>
+      <td>Not to be missed. Best seen in good weather.</td>
+      <td>5</td>
+      <td>Reviewed 7 January 2019</td>
+      <td>Entrance 4.50, 2.25 oaps Good stroll for an ho...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>Wonderful, and such good value. Signage is lim...</td>
+      <td>What a surprise</td>
+      <td>4</td>
+      <td>Reviewed 22 March 2018</td>
+      <td>Wonderful, and such good value. Signage is lim...</td>
+    </tr>
+    <tr>
+      <th>171</th>
+      <td>Just walk around this historical site and step...</td>
+      <td>History</td>
+      <td>5</td>
+      <td>Reviewed 18 March 2018</td>
+      <td>Just walk around this historical site and step...</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>Do not miss visiting the Archaeological Park i...</td>
+      <td>Fantastic mosaics</td>
+      <td>5</td>
+      <td>Reviewed 12 March 2018</td>
+      <td>Do not miss visiting the Archaeological Park i...</td>
+    </tr>
+    <tr>
+      <th>173</th>
+      <td>As has been said... part of the archeological ...</td>
+      <td>Excellent</td>
+      <td>5</td>
+      <td>Reviewed 9 March 2018</td>
+      <td>As has been said... part of the archeological ...</td>
+    </tr>
+    <tr>
+      <th>174</th>
+      <td>The site is huge and although they have put in...</td>
+      <td>This is a must if you are in Paphos</td>
+      <td>4</td>
+      <td>Reviewed 9 March 2018</td>
+      <td>The site is huge and although they have put in...</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>The fact that there are such comprehensive ach...</td>
+      <td>Awe Inspiring</td>
+      <td>5</td>
+      <td>Reviewed 8 March 2018</td>
+      <td>The fact that there are such comprehensive ach...</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>Within easy walking distance of the downtown p...</td>
+      <td>Fascinating insight into the past.</td>
+      <td>4</td>
+      <td>Reviewed 6 March 2018</td>
+      <td>Within easy walking distance of the downtown p...</td>
+    </tr>
+    <tr>
+      <th>177</th>
+      <td>The whole site covers a great expanse of land ...</td>
+      <td>Awesome history and wildlife.</td>
+      <td>5</td>
+      <td>Reviewed 4 March 2018</td>
+      <td>The whole site covers a great expanse of land ...</td>
+    </tr>
+    <tr>
+      <th>178</th>
+      <td>well worth the 4.5 Euros to get in a lovely wa...</td>
+      <td>Amazing</td>
+      <td>5</td>
+      <td>Reviewed 1 March 2018</td>
+      <td>well worth the 4.5 Euros to get in a lovely wa...</td>
+    </tr>
+    <tr>
+      <th>179</th>
+      <td>A number of virtually complete mosaics within ...</td>
+      <td>The star attraction!</td>
+      <td>5</td>
+      <td>Reviewed 25 February 2018</td>
+      <td>A number of virtually complete mosaics within ...</td>
+    </tr>
+    <tr>
+      <th>180</th>
+      <td>Went to this place as part of a trip with my p...</td>
+      <td>Good visit</td>
+      <td>5</td>
+      <td>Reviewed 23 February 2018</td>
+      <td>Went to this place as part of a trip with my p...</td>
+    </tr>
+    <tr>
+      <th>181</th>
+      <td>Part of the excellent  Kato Paphos Archaeologi...</td>
+      <td>A wonderful architectural experience</td>
+      <td>4</td>
+      <td>Reviewed 20 February 2018</td>
+      <td>Part of the excellent  Kato Paphos Archaeologi...</td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>This is a very interesting place to visit, and...</td>
+      <td>Interesting place.</td>
+      <td>4</td>
+      <td>Reviewed 20 February 2018</td>
+      <td>This is a very interesting place to visit, and...</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>Loved strolling around this archaeological sit...</td>
+      <td>Beautiful Mosaics</td>
+      <td>5</td>
+      <td>Reviewed 19 February 2018</td>
+      <td>Loved strolling around this archaeological sit...</td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>Well worth a visit as the site is vast and the...</td>
+      <td>Fascinating place</td>
+      <td>5</td>
+      <td>Reviewed 18 February 2018</td>
+      <td>Well worth a visit as the site is vast and the...</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>Enthralling architecture , a real feel for how...</td>
+      <td>A must for history and archaeology fans .</td>
+      <td>5</td>
+      <td>Reviewed 15 February 2018</td>
+      <td>Enthralling architecture , a real feel for how...</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>Very well preserved and restored mosaics and b...</td>
+      <td>More Interesting ancient history, Cyprus has i...</td>
+      <td>5</td>
+      <td>Reviewed 14 February 2018</td>
+      <td>Very well preserved and restored mosaics and b...</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>I visited in February and would point interest...</td>
+      <td>Excellent</td>
+      <td>5</td>
+      <td>Reviewed 8 February 2018</td>
+      <td>I visited in February and would point interest...</td>
+    </tr>
+    <tr>
+      <th>188</th>
+      <td>Could re-visit often. Great site. Easy to acce...</td>
+      <td>Fascinating.</td>
+      <td>5</td>
+      <td>Reviewed 5 February 2018</td>
+      <td>Could re-visit often. Great site. Easy to acce...</td>
+    </tr>
+    <tr>
+      <th>189</th>
+      <td>Spend a day around these really interesting ru...</td>
+      <td>A real place of interest</td>
+      <td>5</td>
+      <td>Reviewed 4 February 2018</td>
+      <td>Spend a day around these really interesting ru...</td>
+    </tr>
+    <tr>
+      <th>190</th>
+      <td>Loads of tracks lead you around quite a large ...</td>
+      <td>Tomb of the Kings</td>
+      <td>4</td>
+      <td>Reviewed 26 January 2018</td>
+      <td>Loads of tracks lead you around quite a large ...</td>
+    </tr>
+    <tr>
+      <th>191</th>
+      <td>Well worth a visit along with the other places...</td>
+      <td>Outstanding Mosaics</td>
+      <td>5</td>
+      <td>Reviewed 15 January 2018</td>
+      <td>Well worth a visit along with the other places...</td>
+    </tr>
+    <tr>
+      <th>192</th>
+      <td>Visited the House of Dionysus in the first wee...</td>
+      <td>Well worth a visit!</td>
+      <td>5</td>
+      <td>Reviewed 14 January 2018</td>
+      <td>Visited the House of Dionysus in the first wee...</td>
+    </tr>
+    <tr>
+      <th>193</th>
+      <td>Unlike the picture (which is of a Byzantine ca...</td>
+      <td>Home of 2nd century mosaics</td>
+      <td>5</td>
+      <td>Reviewed 12 January 2018</td>
+      <td>Unlike the picture (which is of a Byzantine ca...</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>Part of Kato Paphos Archeological Site, the bu...</td>
+      <td>Mosaics and history mad exciting</td>
+      <td>5</td>
+      <td>Reviewed 10 January 2018</td>
+      <td>Part of Kato Paphos Archeological Site, the bu...</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>This is along with the Tombs one of the must s...</td>
+      <td>Another of Cyprus’s ancient gems</td>
+      <td>5</td>
+      <td>Reviewed 9 January 2018</td>
+      <td>This is along with the Tombs one of the must s...</td>
+    </tr>
+    <tr>
+      <th>196</th>
+      <td>the mosaics and roman buildings are amazing to...</td>
+      <td>mosaics are amazing</td>
+      <td>5</td>
+      <td>Reviewed 7 January 2018</td>
+      <td>the mosaics and roman buildings are amazing to...</td>
+    </tr>
+    <tr>
+      <th>197</th>
+      <td>Well worth a visit and good value for the smal...</td>
+      <td>Excellent</td>
+      <td>5</td>
+      <td>Reviewed 3 January 2018</td>
+      <td>Well worth a visit and good value for the smal...</td>
+    </tr>
+    <tr>
+      <th>198</th>
+      <td>Cheaper entrance fee (5 Euros pp) and freedom ...</td>
+      <td>Beautiful sunset at this point</td>
+      <td>4</td>
+      <td>Reviewed 31 December 2017</td>
+      <td>Cheaper entrance fee (5 Euros pp) and freedom ...</td>
+    </tr>
+    <tr>
+      <th>199</th>
+      <td>We visited this site whilst in Paphos in the S...</td>
+      <td>Stepping back in time</td>
+      <td>5</td>
+      <td>Reviewed 30 December 2017</td>
+      <td>We visited this site whilst in Paphos in the S...</td>
     </tr>
   </tbody>
 </table>
+<p>200 rows × 5 columns</p>
 </div>
 </div>
 
@@ -12487,22 +12787,13 @@ Complete!!!
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Looks good. We look at the number of rows and columns:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_full</span><span class="o">.</span><span class="n">shape</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ms</span><span class="o">.</span><span class="n">all_reviews</span>
 </pre></div>
 
 </div>
@@ -12515,141 +12806,7 @@ Complete!!!
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[8]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(200, 5)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Looks good. We check if there were any read errors (null entries):</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_full</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 200 entries, 0 to 199
-Data columns (total 5 columns):
-Review        200 non-null object
-title         200 non-null object
-Rating        200 non-null int64
-date          200 non-null object
-fullreview    200 non-null object
-dtypes: int64(1), object(4)
-memory usage: 7.9+ KB
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Also looks good. We look at the number of unique entries:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_full</span><span class="p">[</span><span class="s1">&#39;Review&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_full</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>200
-199
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There is a title of a review that is duplicated. We check to see which one that is:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">grp</span> <span class="o">=</span> <span class="n">df_full</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">grp</span><span class="p">[</span><span class="n">grp</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[11]:</div>
+<div class="prompt output_prompt">Out[61]:</div>
 
 
 
@@ -12673,28 +12830,504 @@ memory usage: 7.9+ KB
     <tr style="text-align: right;">
       <th></th>
       <th>Review</th>
+      <th>title</th>
       <th>Rating</th>
       <th>date</th>
       <th>fullreview</th>
     </tr>
-    <tr>
-      <th>title</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Lovely</th>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
+      <th>0</th>
+      <td>This is awesome and is everything books etc sa...</td>
+      <td>Spectacular</td>
+      <td>5</td>
+      <td>Reviewed 2 days ago</td>
+      <td>This is awesome and is everything books etc sa...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Increadible mosiacs, large site, bargain at on...</td>
+      <td>A must see if you are in Paphos</td>
+      <td>5</td>
+      <td>Reviewed 2 days ago</td>
+      <td>Increadible mosiacs, large site, bargain at on...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>This site is vast and we took our time visitin...</td>
+      <td>Simply superb</td>
+      <td>5</td>
+      <td>Reviewed 3 days ago</td>
+      <td>This site is vast and we took our time visitin...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Brilliant day out to this archaeological site....</td>
+      <td>Fab day Out</td>
+      <td>5</td>
+      <td>Reviewed 4 days ago</td>
+      <td>Brilliant day out to this archaeological site....</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>It’s a really beautiful archeological place in...</td>
+      <td>A trip to the past</td>
+      <td>5</td>
+      <td>Reviewed 5 days ago</td>
+      <td>It’s a really beautiful archeological place in...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Came here as a part of the Pahpos site tour.  ...</td>
+      <td>Great view of a site within a site</td>
+      <td>4</td>
+      <td>Reviewed 1 week ago</td>
+      <td>Came here as a part of the Pahpos site tour.  ...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>We arrived late morning because our guide book...</td>
+      <td>Give yourself enough time</td>
+      <td>5</td>
+      <td>Reviewed 1 week ago</td>
+      <td>We arrived late morning because our guide book...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>We visited the mosaics in the cool of the morn...</td>
+      <td>Amazing mosaics</td>
+      <td>5</td>
+      <td>Reviewed 1 week ago</td>
+      <td>We visited the mosaics in the cool of the morn...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Paphos Archaeological Park is an important anc...</td>
+      <td>Very interesting archeological place</td>
+      <td>4</td>
+      <td>Reviewed 2 weeks ago</td>
+      <td>Paphos Archaeological Park is an important anc...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Amazing site.  Could have done with more signa...</td>
+      <td>Stunning</td>
+      <td>5</td>
+      <td>Reviewed 3 weeks ago</td>
+      <td>Amazing site.  Could have done with more signa...</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Where to start? This Archaeological park is ab...</td>
+      <td>Don't miss it</td>
+      <td>5</td>
+      <td>Reviewed 3 weeks ago</td>
+      <td>Where to start? This Archaeological park is ab...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Amazing place to visit lots to see and the his...</td>
+      <td>Amazing</td>
+      <td>5</td>
+      <td>Reviewed 4 weeks ago</td>
+      <td>Amazing place to visit lots to see and the his...</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Really enjoyed spending time walking around th...</td>
+      <td>Interesting</td>
+      <td>5</td>
+      <td>Reviewed 5 weeks ago</td>
+      <td>Really enjoyed spending time walking around th...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>The Mosaic Houses are The Must See experience ...</td>
+      <td>Stunning Mosaics ... not to be missed.</td>
+      <td>5</td>
+      <td>Reviewed 28 March 2019</td>
+      <td>The Mosaic Houses are The Must See experience ...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>I was here in February 2019. Weather from 22 d...</td>
+      <td>I was here in February 2019. Weather from 22 d...</td>
+      <td>5</td>
+      <td>Reviewed 25 March 2019</td>
+      <td>I was here in February 2019. Weather from 22 d...</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Loved exploring this place. Beautiful mosaics ...</td>
+      <td>An archaeological treat</td>
+      <td>5</td>
+      <td>Reviewed 22 March 2019</td>
+      <td>Loved exploring this place. Beautiful mosaics ...</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Well worth a visit one E 4.50 ticket gets you ...</td>
+      <td>Interesting site, amazing mosaics only E4.50 e...</td>
+      <td>5</td>
+      <td>Reviewed 22 March 2019</td>
+      <td>Well worth a visit one E 4.50 ticket gets you ...</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Well worth visiting as part of the Archaeologi...</td>
+      <td>Fantastic Mosaics.</td>
+      <td>5</td>
+      <td>Reviewed 21 March 2019</td>
+      <td>Well worth visiting as part of the Archaeologi...</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Great place to visit and not very expensive.  ...</td>
+      <td>Beautiful place</td>
+      <td>5</td>
+      <td>Reviewed 19 March 2019</td>
+      <td>Great place to visit and not very expensive.  ...</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Loved exploring this place .children wouldn’t ...</td>
+      <td>Fab</td>
+      <td>5</td>
+      <td>Reviewed 8 March 2019</td>
+      <td>Loved exploring this place .children wouldn’t ...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Excellent spot and well worth\nthe price of ad...</td>
+      <td>Excellent.</td>
+      <td>5</td>
+      <td>Reviewed 28 February 2019</td>
+      <td>Excellent spot and well worth\nthe price of ad...</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>this is well worth aq visit, excellent value f...</td>
+      <td>ancient riuns</td>
+      <td>5</td>
+      <td>Reviewed 26 February 2019</td>
+      <td>this is well worth aq visit, excellent value f...</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>this place was not really advertised and cost ...</td>
+      <td>wow what a gem</td>
+      <td>5</td>
+      <td>Reviewed 19 February 2019</td>
+      <td>this place was not really advertised and cost ...</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>This is the biggest ‘House’ with more mosaics ...</td>
+      <td>Mosaics in abundance !</td>
+      <td>5</td>
+      <td>Reviewed 14 February 2019</td>
+      <td>This is the biggest ‘House’ with more mosaics ...</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>The House of Dionysus is the gem within the ge...</td>
+      <td>The highlight within Paphos' gem!</td>
+      <td>5</td>
+      <td>Reviewed 3 February 2019</td>
+      <td>The House of Dionysus is the gem within the ge...</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>The best mosaics I have ever seen. The park is...</td>
+      <td>Brilliant mosaics</td>
+      <td>5</td>
+      <td>Reviewed 30 January 2019</td>
+      <td>The best mosaics I have ever seen. The park is...</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>This site seems to have expanded over the past...</td>
+      <td>Fascinating</td>
+      <td>5</td>
+      <td>Reviewed 27 January 2019</td>
+      <td>This site seems to have expanded over the past...</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>This is a must if staying in Paphos, the histo...</td>
+      <td>Great afternoon out. Amazing history</td>
+      <td>5</td>
+      <td>Reviewed 13 January 2019</td>
+      <td>This is a must if staying in Paphos, the histo...</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>My goodness the history in this area is brilli...</td>
+      <td>Interesting</td>
+      <td>5</td>
+      <td>Reviewed 8 January 2019</td>
+      <td>My goodness the history in this area is brilli...</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Entrance 4.50, 2.25 oaps Good stroll for an ho...</td>
+      <td>Not to be missed. Best seen in good weather.</td>
+      <td>5</td>
+      <td>Reviewed 7 January 2019</td>
+      <td>Entrance 4.50, 2.25 oaps Good stroll for an ho...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>Wonderful, and such good value. Signage is lim...</td>
+      <td>What a surprise</td>
+      <td>4</td>
+      <td>Reviewed 22 March 2018</td>
+      <td>Wonderful, and such good value. Signage is lim...</td>
+    </tr>
+    <tr>
+      <th>171</th>
+      <td>Just walk around this historical site and step...</td>
+      <td>History</td>
+      <td>5</td>
+      <td>Reviewed 18 March 2018</td>
+      <td>Just walk around this historical site and step...</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>Do not miss visiting the Archaeological Park i...</td>
+      <td>Fantastic mosaics</td>
+      <td>5</td>
+      <td>Reviewed 12 March 2018</td>
+      <td>Do not miss visiting the Archaeological Park i...</td>
+    </tr>
+    <tr>
+      <th>173</th>
+      <td>As has been said... part of the archeological ...</td>
+      <td>Excellent</td>
+      <td>5</td>
+      <td>Reviewed 9 March 2018</td>
+      <td>As has been said... part of the archeological ...</td>
+    </tr>
+    <tr>
+      <th>174</th>
+      <td>The site is huge and although they have put in...</td>
+      <td>This is a must if you are in Paphos</td>
+      <td>4</td>
+      <td>Reviewed 9 March 2018</td>
+      <td>The site is huge and although they have put in...</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>The fact that there are such comprehensive ach...</td>
+      <td>Awe Inspiring</td>
+      <td>5</td>
+      <td>Reviewed 8 March 2018</td>
+      <td>The fact that there are such comprehensive ach...</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>Within easy walking distance of the downtown p...</td>
+      <td>Fascinating insight into the past.</td>
+      <td>4</td>
+      <td>Reviewed 6 March 2018</td>
+      <td>Within easy walking distance of the downtown p...</td>
+    </tr>
+    <tr>
+      <th>177</th>
+      <td>The whole site covers a great expanse of land ...</td>
+      <td>Awesome history and wildlife.</td>
+      <td>5</td>
+      <td>Reviewed 4 March 2018</td>
+      <td>The whole site covers a great expanse of land ...</td>
+    </tr>
+    <tr>
+      <th>178</th>
+      <td>well worth the 4.5 Euros to get in a lovely wa...</td>
+      <td>Amazing</td>
+      <td>5</td>
+      <td>Reviewed 1 March 2018</td>
+      <td>well worth the 4.5 Euros to get in a lovely wa...</td>
+    </tr>
+    <tr>
+      <th>179</th>
+      <td>A number of virtually complete mosaics within ...</td>
+      <td>The star attraction!</td>
+      <td>5</td>
+      <td>Reviewed 25 February 2018</td>
+      <td>A number of virtually complete mosaics within ...</td>
+    </tr>
+    <tr>
+      <th>180</th>
+      <td>Went to this place as part of a trip with my p...</td>
+      <td>Good visit</td>
+      <td>5</td>
+      <td>Reviewed 23 February 2018</td>
+      <td>Went to this place as part of a trip with my p...</td>
+    </tr>
+    <tr>
+      <th>181</th>
+      <td>Part of the excellent  Kato Paphos Archaeologi...</td>
+      <td>A wonderful architectural experience</td>
+      <td>4</td>
+      <td>Reviewed 20 February 2018</td>
+      <td>Part of the excellent  Kato Paphos Archaeologi...</td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>This is a very interesting place to visit, and...</td>
+      <td>Interesting place.</td>
+      <td>4</td>
+      <td>Reviewed 20 February 2018</td>
+      <td>This is a very interesting place to visit, and...</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>Loved strolling around this archaeological sit...</td>
+      <td>Beautiful Mosaics</td>
+      <td>5</td>
+      <td>Reviewed 19 February 2018</td>
+      <td>Loved strolling around this archaeological sit...</td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>Well worth a visit as the site is vast and the...</td>
+      <td>Fascinating place</td>
+      <td>5</td>
+      <td>Reviewed 18 February 2018</td>
+      <td>Well worth a visit as the site is vast and the...</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>Enthralling architecture , a real feel for how...</td>
+      <td>A must for history and archaeology fans .</td>
+      <td>5</td>
+      <td>Reviewed 15 February 2018</td>
+      <td>Enthralling architecture , a real feel for how...</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>Very well preserved and restored mosaics and b...</td>
+      <td>More Interesting ancient history, Cyprus has i...</td>
+      <td>5</td>
+      <td>Reviewed 14 February 2018</td>
+      <td>Very well preserved and restored mosaics and b...</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>I visited in February and would point interest...</td>
+      <td>Excellent</td>
+      <td>5</td>
+      <td>Reviewed 8 February 2018</td>
+      <td>I visited in February and would point interest...</td>
+    </tr>
+    <tr>
+      <th>188</th>
+      <td>Could re-visit often. Great site. Easy to acce...</td>
+      <td>Fascinating.</td>
+      <td>5</td>
+      <td>Reviewed 5 February 2018</td>
+      <td>Could re-visit often. Great site. Easy to acce...</td>
+    </tr>
+    <tr>
+      <th>189</th>
+      <td>Spend a day around these really interesting ru...</td>
+      <td>A real place of interest</td>
+      <td>5</td>
+      <td>Reviewed 4 February 2018</td>
+      <td>Spend a day around these really interesting ru...</td>
+    </tr>
+    <tr>
+      <th>190</th>
+      <td>Loads of tracks lead you around quite a large ...</td>
+      <td>Tomb of the Kings</td>
+      <td>4</td>
+      <td>Reviewed 26 January 2018</td>
+      <td>Loads of tracks lead you around quite a large ...</td>
+    </tr>
+    <tr>
+      <th>191</th>
+      <td>Well worth a visit along with the other places...</td>
+      <td>Outstanding Mosaics</td>
+      <td>5</td>
+      <td>Reviewed 15 January 2018</td>
+      <td>Well worth a visit along with the other places...</td>
+    </tr>
+    <tr>
+      <th>192</th>
+      <td>Visited the House of Dionysus in the first wee...</td>
+      <td>Well worth a visit!</td>
+      <td>5</td>
+      <td>Reviewed 14 January 2018</td>
+      <td>Visited the House of Dionysus in the first wee...</td>
+    </tr>
+    <tr>
+      <th>193</th>
+      <td>Unlike the picture (which is of a Byzantine ca...</td>
+      <td>Home of 2nd century mosaics</td>
+      <td>5</td>
+      <td>Reviewed 12 January 2018</td>
+      <td>Unlike the picture (which is of a Byzantine ca...</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>Part of Kato Paphos Archeological Site, the bu...</td>
+      <td>Mosaics and history mad exciting</td>
+      <td>5</td>
+      <td>Reviewed 10 January 2018</td>
+      <td>Part of Kato Paphos Archeological Site, the bu...</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>This is along with the Tombs one of the must s...</td>
+      <td>Another of Cyprus’s ancient gems</td>
+      <td>5</td>
+      <td>Reviewed 9 January 2018</td>
+      <td>This is along with the Tombs one of the must s...</td>
+    </tr>
+    <tr>
+      <th>196</th>
+      <td>the mosaics and roman buildings are amazing to...</td>
+      <td>mosaics are amazing</td>
+      <td>5</td>
+      <td>Reviewed 7 January 2018</td>
+      <td>the mosaics and roman buildings are amazing to...</td>
+    </tr>
+    <tr>
+      <th>197</th>
+      <td>Well worth a visit and good value for the smal...</td>
+      <td>Excellent</td>
+      <td>5</td>
+      <td>Reviewed 3 January 2018</td>
+      <td>Well worth a visit and good value for the smal...</td>
+    </tr>
+    <tr>
+      <th>198</th>
+      <td>Cheaper entrance fee (5 Euros pp) and freedom ...</td>
+      <td>Beautiful sunset at this point</td>
+      <td>4</td>
+      <td>Reviewed 31 December 2017</td>
+      <td>Cheaper entrance fee (5 Euros pp) and freedom ...</td>
+    </tr>
+    <tr>
+      <th>199</th>
+      <td>We visited this site whilst in Paphos in the S...</td>
+      <td>Stepping back in time</td>
+      <td>5</td>
+      <td>Reviewed 30 December 2017</td>
+      <td>We visited this site whilst in Paphos in the S...</td>
     </tr>
   </tbody>
 </table>
+<p>200 rows × 5 columns</p>
 </div>
 </div>
 
@@ -12703,22 +13336,13 @@ memory usage: 7.9+ KB
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The title that is not unique is 'Lovely'. Let's look at whether this is a legitimate duplicate and not an error:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_full</span><span class="p">[</span><span class="n">df_full</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Lovely&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">WebScraper</span><span class="o">.</span><span class="n">WebScraper</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12731,88 +13355,93 @@ memory usage: 7.9+ KB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[12]:</div>
+<div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Help on class WebScraper in module WebScraper:
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+class WebScraper(builtins.object)
+ |  This class aids in retrieving review information such as the review,
+ |  the title of the review, the date of the review and the rating of the review.
+ |  Since each review site&#39;s html is constructed differently, site specific
+ |  functions are required.
+ |  
+ |  Methods defined here:
+ |  
+ |  __init__(self, url=&#39;&#39;, site=&#39;&#39;, silent=True, url1=&#39;&#39;, url2=&#39;&#39;, increment_string1=&#39;&#39;, increment_string2=&#39;&#39;, total_pages=1, increment=10, seconds_wait=1)
+ |      Constructor.
+ |      url: the main url of the website to scrape for one-off webscraping
+ |      site: the site the url is on. i.e. tripadvisor
+ |      silent: determines whether diagnostics are to be displayed
+ |      url1: the first part of a series of urls that doesn&#39;t change
+ |      url2: the second part of a series of urls that doesn&#39;t change
+ |      increment_string1: the first incremental part of the url
+ |      increment_string2: the second incremental part of the url
+ |      total_pages: total number of pages to increment
+ |      increment: the amount each page should increment each time
+ |      seconds_wait: wait time between requests
+ |      
+ |      Remark: url1, url2 are the static parts of the urls that do not change in incrementation
+ |      
+ |      Example:
+ |      url = &#34;https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d2570383-Reviews-Cafe_in_the_Crypt-London_England.html&#34;
+ |      url1 + increment_string1 + increment_string1 + increment + increment_string2 + url2= &#34;https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d2570383-Reviews-or10-Cafe_in_the_Crypt-London_England.html&#34;
+ |      
+ |      In the above, url is the main page (this can be left blank).
+ |      url1 = &#34;https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d2570383-Reviews&#34;
+ |      increment_string1 = &#34;or&#34;
+ |      increment = 10 (this is how much each page increments by)
+ |      increment_string2 = &#34;&#34;
+ |      url2 = &#34;-Cafe_in_the_Crypt-London_England.html&#34;
+ |  
+ |  diagnostics(self, *args)
+ |      This function checks that the lists given as arguments are of equal sizes
+ |      args: An arbitrary number of lists
+ |      silent: A boolean indicating whether diagnostic results are to be displayed
+ |  
+ |  findStars(self, x)
+ |      This function extracts the rating from the html element.
+ |      x: string representation of the html element
+ |      returns: int. The rating.
+ |  
+ |  fullscraper(self)
+ |      This function increments the site url to the next page according to update 
+ |      criteria and scrapes that page. The full url of subsequent pages is 
+ |      url = url1 + increment_string1 + increment + increment_string2 + url2.
+ |  
+ |  scrape(self, url=&#39;&#39;)
+ |      This functioni scrapes relevant review tags from a website url. If a url
+ |      is provided, it is intended for single use of a particular web page. If it
+ |      is not provided, get it from the object.
+ |      url: A string url
+ |      site: A string indicating the site name to be scraped
+ |      silent: A boolean indicating whether diagnostic results are to be displayed
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |  
+ |  __weakref__
+ |      list of weak references to the object (if defined)
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Review</th>
-      <th>title</th>
-      <th>Rating</th>
-      <th>date</th>
-      <th>fullreview</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>94</th>
-      <td>A calm quiet place and comparatively inexpensi...</td>
-      <td>Lovely</td>
-      <td>5</td>
-      <td>Reviewed 19 June 2018</td>
-      <td>A calm quiet place and comparatively inexpensi...</td>
-    </tr>
-    <tr>
-      <th>152</th>
-      <td>Beautiful environment. Busy but well stocked a...</td>
-      <td>Lovely</td>
-      <td>5</td>
-      <td>Reviewed 10 March 2018</td>
-      <td>Beautiful environment. Busy but well stocked a...</td>
-    </tr>
-  </tbody>
-</table>
+</pre>
 </div>
-</div>
-
 </div>
 
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Looks legitimate!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Web-Scrape-one-page-from-Yelp">Web Scrape one page from Yelp<a class="anchor-link" href="#Web-Scrape-one-page-from-Yelp">&#182;</a></h2>
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">,</span><span class="n">success</span> <span class="o">=</span> <span class="n">webscrape</span><span class="p">(</span><span class="s2">&quot;https://www.yelp.co.uk/biz/ffionas-restaurant-london?</span><span class="se">\</span>
-<span class="s2">osq=Restaurants&quot;</span><span class="p">,</span><span class="s1">&#39;yelp&#39;</span><span class="p">,</span><span class="kc">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ms</span> <span class="o">=</span> <span class="n">WebScraper</span><span class="o">.</span><span class="n">WebScraper</span><span class="p">(</span><span class="s2">&quot;https://www.yelp.co.uk/biz/hotel-indigo-london-3?osq=mercure&quot;</span><span class="p">,</span> <span class="s1">&#39;yelp&#39;</span><span class="p">,</span> <span class="n">silent</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">ms</span><span class="o">.</span><span class="n">scrape</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12838,313 +13467,79 @@ Diagnostics complete!
 </div>
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[14]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Review</th>
-      <th>title</th>
-      <th>Rating</th>
-      <th>date</th>
-      <th>fullreview</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Awesome in all regards. Unpretentious, fun, wa...</td>
-      <td>Awesome in all regards. Unpretentious, fun, wa...</td>
-      <td>5</td>
-      <td>30/11/2018</td>
-      <td>Awesome in all regards. Unpretentious, fun, wa...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>We were so happy when we called (last minute) ...</td>
-      <td>We were so happy when we called (last minute) ...</td>
-      <td>4</td>
-      <td>5/1/2019</td>
-      <td>We were so happy when we called (last minute) ...</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>So I honestly picked this place strictly based...</td>
-      <td>So I honestly picked this place strictly based...</td>
-      <td>5</td>
-      <td>20/11/2018</td>
-      <td>So I honestly picked this place strictly based...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>This was our first dinner in London and we did...</td>
-      <td>This was our first dinner in London and we did...</td>
-      <td>5</td>
-      <td>8/10/2018</td>
-      <td>This was our first dinner in London and we did...</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Absolute gem! We were so happy when we called ...</td>
-      <td>Absolute gem! We were so happy when we called ...</td>
-      <td>5</td>
-      <td>5/11/2018</td>
-      <td>Absolute gem! We were so happy when we called ...</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Web-Scrape-10-pages-from-yelp">Web Scrape 10 pages from yelp<a class="anchor-link" href="#Web-Scrape-10-pages-from-yelp">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">inurl1</span> <span class="o">=</span> <span class="s2">&quot;https://www.yelp.co.uk/biz/ffionas-restaurant-london&quot;</span>
-<span class="n">inurl2</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-
-<span class="n">df_full</span> <span class="o">=</span> <span class="n">fullscraper</span><span class="p">(</span><span class="n">site</span><span class="o">=</span><span class="s1">&#39;yelp&#39;</span><span class="p">,</span><span class="n">first_url</span><span class="o">=</span><span class="n">inurl1</span><span class="o">+</span><span class="n">inurl2</span><span class="p">,</span><span class="n">url1</span><span class="o">=</span><span class="n">inurl1</span><span class="p">,</span><span class="n">url2</span><span class="o">=</span><span class="n">inurl2</span><span class="p">,</span>\
-                      <span class="n">increment_string1</span><span class="o">=</span><span class="s2">&quot;?start=&quot;</span><span class="p">,</span><span class="n">increment_string2</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>\
-                      <span class="n">total_pages</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">increment</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">output_file</span><span class="o">=</span><span class="s1">&#39;testing.csv&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Getting reviews 0/ 10
-Diagnostics: Checking if dataframes are of equal size...
-Size: 20
-Size: 20
-Size: 20
-Diagnostics complete!
-Getting reviews 1/ 10
-Getting reviews 2/ 10
-Getting reviews 3/ 10
-Getting reviews 4/ 10
-Getting reviews 5/ 10
-Getting reviews 6/ 10
-Getting reviews 7/ 10
-Getting reviews 8/ 10
-Getting reviews 9/ 10
-Getting reviews 10/ 10
-Complete!!!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We look at the first 5 rows:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_full</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[16]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Review</th>
-      <th>title</th>
-      <th>Rating</th>
-      <th>date</th>
-      <th>fullreview</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Awesome in all regards. Unpretentious, fun, wa...</td>
-      <td>Awesome in all regards. Unpretentious, fun, wa...</td>
-      <td>5</td>
-      <td>30/11/2018</td>
-      <td>Awesome in all regards. Unpretentious, fun, wa...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>We were so happy when we called (last minute) ...</td>
-      <td>We were so happy when we called (last minute) ...</td>
-      <td>4</td>
-      <td>5/1/2019</td>
-      <td>We were so happy when we called (last minute) ...</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>So I honestly picked this place strictly based...</td>
-      <td>So I honestly picked this place strictly based...</td>
-      <td>5</td>
-      <td>20/11/2018</td>
-      <td>So I honestly picked this place strictly based...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>This was our first dinner in London and we did...</td>
-      <td>This was our first dinner in London and we did...</td>
-      <td>5</td>
-      <td>8/10/2018</td>
-      <td>This was our first dinner in London and we did...</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Absolute gem! We were so happy when we called ...</td>
-      <td>Absolute gem! We were so happy when we called ...</td>
-      <td>5</td>
-      <td>5/11/2018</td>
-      <td>Absolute gem! We were so happy when we called ...</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Looks good. We look at the number of rows and columns:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_full</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[17]:</div>
+<div class="prompt output_prompt">Out[63]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(200, 5)</pre>
+<pre>(                                               Review  \
+ 0   Really nice and comfortable hotel. Close to th...   
+ 1   Loved the location! Loved the (tiny) room and ...   
+ 2   Pretty good. The rooms are modern and stylish,...   
+ 3   Simply adorable and they have thought of every...   
+ 4   One of my few 5 stars. Last day today and supe...   
+ 5   I was told before I left the US that London ho...   
+ 6   I discovered this little gem a few years ago a...   
+ 7   I stayed for one night at Hotel Indigo, and ha...   
+ 8   Very nice room. Friendly staff. The staff real...   
+ 9   On Friday night, my wife and I arrived at the ...   
+ 10  Small rooms, decent price, friendly staffThis ...   
+ 11  The Indigo Hotel at Paddington is located to t...   
+ 12  I am SUPER impressed with this hotel!First, I ...   
+ 13  The location cannot be beat - a very short wal...   
+ 14  We started our European trip in London and cou...   
+ 15  Hotel evaluation is always a function of price...   
+ 16  This is my first time and firat hotel in our h...   
+ 17  Hotel Indigo&#39;s are really out to impress me. Y...   
+ 18  I was here on business. The location was perfe...   
+ 19  Updated Review - Returned to London this week ...   
+ 
+                                                 title  Rating        date  \
+ 0   Really nice and comfortable hotel. Close to th...       5   11/4/2019   
+ 1   Loved the location! Loved the (tiny) room and ...       5   21/6/2018   
+ 2   Pretty good. The rooms are modern and stylish,...       3   18/9/2018   
+ 3   Simply adorable and they have thought of every...       5  15/12/2017   
+ 4   One of my few 5 stars. Last day today and supe...       5   8/10/2016   
+ 5   I was told before I left the US that London ho...       5   29/9/2017   
+ 6   I discovered this little gem a few years ago a...       5   13/1/2016   
+ 7   I stayed for one night at Hotel Indigo, and ha...       5    4/7/2016   
+ 8   Very nice room. Friendly staff. The staff real...       5   24/9/2017   
+ 9   On Friday night, my wife and I arrived at the ...       5    8/1/2017   
+ 10  Small rooms, decent price, friendly staffThis ...       4    6/2/2013   
+ 11  The Indigo Hotel at Paddington is located to t...       4  22/10/2014   
+ 12  I am SUPER impressed with this hotel!First, I ...       5   10/9/2012   
+ 13  The location cannot be beat - a very short wal...       5   27/2/2012   
+ 14  We started our European trip in London and cou...       5  30/11/2014   
+ 15  Hotel evaluation is always a function of price...       3   24/6/2015   
+ 16  This is my first time and firat hotel in our h...       4   23/2/2014   
+ 17  Hotel Indigo&#39;s are really out to impress me. Y...       4   17/3/2012   
+ 18  I was here on business. The location was perfe...       5   12/1/2015   
+ 19  Updated Review - Returned to London this week ...       5   30/7/2011   
+ 
+                                            fullreview  
+ 0   Really nice and comfortable hotel. Close to th...  
+ 1   Loved the location! Loved the (tiny) room and ...  
+ 2   Pretty good. The rooms are modern and stylish,...  
+ 3   Simply adorable and they have thought of every...  
+ 4   One of my few 5 stars. Last day today and supe...  
+ 5   I was told before I left the US that London ho...  
+ 6   I discovered this little gem a few years ago a...  
+ 7   I stayed for one night at Hotel Indigo, and ha...  
+ 8   Very nice room. Friendly staff. The staff real...  
+ 9   On Friday night, my wife and I arrived at the ...  
+ 10  Small rooms, decent price, friendly staffThis ...  
+ 11  The Indigo Hotel at Paddington is located to t...  
+ 12  I am SUPER impressed with this hotel!First, I ...  
+ 13  The location cannot be beat - a very short wal...  
+ 14  We started our European trip in London and cou...  
+ 15  Hotel evaluation is always a function of price...  
+ 16  This is my first time and firat hotel in our h...  
+ 17  Hotel Indigo&#39;s are really out to impress me. Y...  
+ 18  I was here on business. The location was perfe...  
+ 19  Updated Review - Returned to London this week ...  , True)</pre>
 </div>
 
 </div>
@@ -13152,22 +13547,243 @@ Complete!!!
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Looks good. We check if there were any read errors (null entries):</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_full</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ms</span><span class="o">.</span><span class="n">reviews</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[64]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Review</th>
+      <th>title</th>
+      <th>Rating</th>
+      <th>date</th>
+      <th>fullreview</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Really nice and comfortable hotel. Close to th...</td>
+      <td>Really nice and comfortable hotel. Close to th...</td>
+      <td>5</td>
+      <td>11/4/2019</td>
+      <td>Really nice and comfortable hotel. Close to th...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Loved the location! Loved the (tiny) room and ...</td>
+      <td>Loved the location! Loved the (tiny) room and ...</td>
+      <td>5</td>
+      <td>21/6/2018</td>
+      <td>Loved the location! Loved the (tiny) room and ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Pretty good. The rooms are modern and stylish,...</td>
+      <td>Pretty good. The rooms are modern and stylish,...</td>
+      <td>3</td>
+      <td>18/9/2018</td>
+      <td>Pretty good. The rooms are modern and stylish,...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Simply adorable and they have thought of every...</td>
+      <td>Simply adorable and they have thought of every...</td>
+      <td>5</td>
+      <td>15/12/2017</td>
+      <td>Simply adorable and they have thought of every...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>One of my few 5 stars. Last day today and supe...</td>
+      <td>One of my few 5 stars. Last day today and supe...</td>
+      <td>5</td>
+      <td>8/10/2016</td>
+      <td>One of my few 5 stars. Last day today and supe...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>I was told before I left the US that London ho...</td>
+      <td>I was told before I left the US that London ho...</td>
+      <td>5</td>
+      <td>29/9/2017</td>
+      <td>I was told before I left the US that London ho...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>I discovered this little gem a few years ago a...</td>
+      <td>I discovered this little gem a few years ago a...</td>
+      <td>5</td>
+      <td>13/1/2016</td>
+      <td>I discovered this little gem a few years ago a...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>I stayed for one night at Hotel Indigo, and ha...</td>
+      <td>I stayed for one night at Hotel Indigo, and ha...</td>
+      <td>5</td>
+      <td>4/7/2016</td>
+      <td>I stayed for one night at Hotel Indigo, and ha...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Very nice room. Friendly staff. The staff real...</td>
+      <td>Very nice room. Friendly staff. The staff real...</td>
+      <td>5</td>
+      <td>24/9/2017</td>
+      <td>Very nice room. Friendly staff. The staff real...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>On Friday night, my wife and I arrived at the ...</td>
+      <td>On Friday night, my wife and I arrived at the ...</td>
+      <td>5</td>
+      <td>8/1/2017</td>
+      <td>On Friday night, my wife and I arrived at the ...</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Small rooms, decent price, friendly staffThis ...</td>
+      <td>Small rooms, decent price, friendly staffThis ...</td>
+      <td>4</td>
+      <td>6/2/2013</td>
+      <td>Small rooms, decent price, friendly staffThis ...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>The Indigo Hotel at Paddington is located to t...</td>
+      <td>The Indigo Hotel at Paddington is located to t...</td>
+      <td>4</td>
+      <td>22/10/2014</td>
+      <td>The Indigo Hotel at Paddington is located to t...</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>I am SUPER impressed with this hotel!First, I ...</td>
+      <td>I am SUPER impressed with this hotel!First, I ...</td>
+      <td>5</td>
+      <td>10/9/2012</td>
+      <td>I am SUPER impressed with this hotel!First, I ...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>The location cannot be beat - a very short wal...</td>
+      <td>The location cannot be beat - a very short wal...</td>
+      <td>5</td>
+      <td>27/2/2012</td>
+      <td>The location cannot be beat - a very short wal...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>We started our European trip in London and cou...</td>
+      <td>We started our European trip in London and cou...</td>
+      <td>5</td>
+      <td>30/11/2014</td>
+      <td>We started our European trip in London and cou...</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Hotel evaluation is always a function of price...</td>
+      <td>Hotel evaluation is always a function of price...</td>
+      <td>3</td>
+      <td>24/6/2015</td>
+      <td>Hotel evaluation is always a function of price...</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>This is my first time and firat hotel in our h...</td>
+      <td>This is my first time and firat hotel in our h...</td>
+      <td>4</td>
+      <td>23/2/2014</td>
+      <td>This is my first time and firat hotel in our h...</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Hotel Indigo's are really out to impress me. Y...</td>
+      <td>Hotel Indigo's are really out to impress me. Y...</td>
+      <td>4</td>
+      <td>17/3/2012</td>
+      <td>Hotel Indigo's are really out to impress me. Y...</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>I was here on business. The location was perfe...</td>
+      <td>I was here on business. The location was perfe...</td>
+      <td>5</td>
+      <td>12/1/2015</td>
+      <td>I was here on business. The location was perfe...</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Updated Review - Returned to London this week ...</td>
+      <td>Updated Review - Returned to London this week ...</td>
+      <td>5</td>
+      <td>30/7/2011</td>
+      <td>Updated Review - Returned to London this week ...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">inurl1</span> <span class="o">=</span> <span class="s2">&quot;https://www.yelp.co.uk/biz/hotel-indigo-london-3&quot;</span>
+<span class="n">inurl2</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">increment_string1</span> <span class="o">=</span> <span class="s2">&quot;?start=&quot;</span>
+<span class="n">total_pages</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">increment</span><span class="o">=</span><span class="mi">20</span>
+
+<span class="n">ms</span> <span class="o">=</span> <span class="n">WebScraper</span><span class="o">.</span><span class="n">WebScraper</span><span class="p">(</span><span class="n">site</span><span class="o">=</span><span class="s1">&#39;yelp&#39;</span><span class="p">,</span><span class="n">url1</span><span class="o">=</span><span class="n">inurl1</span><span class="p">,</span>\
+                      <span class="n">url2</span><span class="o">=</span><span class="n">inurl2</span><span class="p">,</span><span class="n">increment_string1</span><span class="o">=</span><span class="n">increment_string1</span><span class="p">,</span>\
+                      <span class="n">total_pages</span><span class="o">=</span><span class="n">total_pages</span><span class="p">,</span><span class="n">increment</span><span class="o">=</span><span class="n">increment</span><span class="p">,</span><span class="n">silent</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">ms</span><span class="o">.</span><span class="n">fullscraper</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -13184,40 +13800,322 @@ Complete!!!
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 200 entries, 0 to 199
-Data columns (total 5 columns):
-Review        200 non-null object
-title         200 non-null object
-Rating        200 non-null int64
-date          200 non-null object
-fullreview    200 non-null object
-dtypes: int64(1), object(4)
-memory usage: 7.9+ KB
+<pre>Getting reviews 0/ 2
+Diagnostics: Checking if dataframes are of equal size...
+Size: 20
+Size: 20
+Size: 20
+Diagnostics complete!
+Getting reviews 1/ 2
+Diagnostics: Checking if dataframes are of equal size...
+Size: 11
+Size: 11
+Size: 11
+Diagnostics complete!
+Getting reviews 2/ 2
+Complete!!!
 </pre>
 </div>
 </div>
 
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[67]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Review</th>
+      <th>title</th>
+      <th>Rating</th>
+      <th>date</th>
+      <th>fullreview</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Really nice and comfortable hotel. Close to th...</td>
+      <td>Really nice and comfortable hotel. Close to th...</td>
+      <td>5</td>
+      <td>11/4/2019</td>
+      <td>Really nice and comfortable hotel. Close to th...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Loved the location! Loved the (tiny) room and ...</td>
+      <td>Loved the location! Loved the (tiny) room and ...</td>
+      <td>5</td>
+      <td>21/6/2018</td>
+      <td>Loved the location! Loved the (tiny) room and ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Pretty good. The rooms are modern and stylish,...</td>
+      <td>Pretty good. The rooms are modern and stylish,...</td>
+      <td>3</td>
+      <td>18/9/2018</td>
+      <td>Pretty good. The rooms are modern and stylish,...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Simply adorable and they have thought of every...</td>
+      <td>Simply adorable and they have thought of every...</td>
+      <td>5</td>
+      <td>15/12/2017</td>
+      <td>Simply adorable and they have thought of every...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>One of my few 5 stars. Last day today and supe...</td>
+      <td>One of my few 5 stars. Last day today and supe...</td>
+      <td>5</td>
+      <td>8/10/2016</td>
+      <td>One of my few 5 stars. Last day today and supe...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>I was told before I left the US that London ho...</td>
+      <td>I was told before I left the US that London ho...</td>
+      <td>5</td>
+      <td>29/9/2017</td>
+      <td>I was told before I left the US that London ho...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>I discovered this little gem a few years ago a...</td>
+      <td>I discovered this little gem a few years ago a...</td>
+      <td>5</td>
+      <td>13/1/2016</td>
+      <td>I discovered this little gem a few years ago a...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>I stayed for one night at Hotel Indigo, and ha...</td>
+      <td>I stayed for one night at Hotel Indigo, and ha...</td>
+      <td>5</td>
+      <td>4/7/2016</td>
+      <td>I stayed for one night at Hotel Indigo, and ha...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Very nice room. Friendly staff. The staff real...</td>
+      <td>Very nice room. Friendly staff. The staff real...</td>
+      <td>5</td>
+      <td>24/9/2017</td>
+      <td>Very nice room. Friendly staff. The staff real...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>On Friday night, my wife and I arrived at the ...</td>
+      <td>On Friday night, my wife and I arrived at the ...</td>
+      <td>5</td>
+      <td>8/1/2017</td>
+      <td>On Friday night, my wife and I arrived at the ...</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Small rooms, decent price, friendly staffThis ...</td>
+      <td>Small rooms, decent price, friendly staffThis ...</td>
+      <td>4</td>
+      <td>6/2/2013</td>
+      <td>Small rooms, decent price, friendly staffThis ...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>The Indigo Hotel at Paddington is located to t...</td>
+      <td>The Indigo Hotel at Paddington is located to t...</td>
+      <td>4</td>
+      <td>22/10/2014</td>
+      <td>The Indigo Hotel at Paddington is located to t...</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>I am SUPER impressed with this hotel!First, I ...</td>
+      <td>I am SUPER impressed with this hotel!First, I ...</td>
+      <td>5</td>
+      <td>10/9/2012</td>
+      <td>I am SUPER impressed with this hotel!First, I ...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>The location cannot be beat - a very short wal...</td>
+      <td>The location cannot be beat - a very short wal...</td>
+      <td>5</td>
+      <td>27/2/2012</td>
+      <td>The location cannot be beat - a very short wal...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>We started our European trip in London and cou...</td>
+      <td>We started our European trip in London and cou...</td>
+      <td>5</td>
+      <td>30/11/2014</td>
+      <td>We started our European trip in London and cou...</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Hotel evaluation is always a function of price...</td>
+      <td>Hotel evaluation is always a function of price...</td>
+      <td>3</td>
+      <td>24/6/2015</td>
+      <td>Hotel evaluation is always a function of price...</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>This is my first time and firat hotel in our h...</td>
+      <td>This is my first time and firat hotel in our h...</td>
+      <td>4</td>
+      <td>23/2/2014</td>
+      <td>This is my first time and firat hotel in our h...</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Hotel Indigo's are really out to impress me. Y...</td>
+      <td>Hotel Indigo's are really out to impress me. Y...</td>
+      <td>4</td>
+      <td>17/3/2012</td>
+      <td>Hotel Indigo's are really out to impress me. Y...</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>I was here on business. The location was perfe...</td>
+      <td>I was here on business. The location was perfe...</td>
+      <td>5</td>
+      <td>12/1/2015</td>
+      <td>I was here on business. The location was perfe...</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Updated Review - Returned to London this week ...</td>
+      <td>Updated Review - Returned to London this week ...</td>
+      <td>5</td>
+      <td>30/7/2011</td>
+      <td>Updated Review - Returned to London this week ...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>The Hotel Indigo in Paddington is a recently r...</td>
+      <td>The Hotel Indigo in Paddington is a recently r...</td>
+      <td>4</td>
+      <td>15/1/2009</td>
+      <td>The Hotel Indigo in Paddington is a recently r...</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>A solid trendy boutique hotel located just a f...</td>
+      <td>A solid trendy boutique hotel located just a f...</td>
+      <td>4</td>
+      <td>13/10/2010</td>
+      <td>A solid trendy boutique hotel located just a f...</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>If you are looking for clean, quiet, well loca...</td>
+      <td>If you are looking for clean, quiet, well loca...</td>
+      <td>5</td>
+      <td>13/6/2014</td>
+      <td>If you are looking for clean, quiet, well loca...</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>We stayed here for 6 nights and really enjoyed...</td>
+      <td>We stayed here for 6 nights and really enjoyed...</td>
+      <td>4</td>
+      <td>6/6/2011</td>
+      <td>We stayed here for 6 nights and really enjoyed...</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>I stayed at this little boutique hotel back in...</td>
+      <td>I stayed at this little boutique hotel back in...</td>
+      <td>4</td>
+      <td>6/1/2011</td>
+      <td>I stayed at this little boutique hotel back in...</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>A+++ for front desk service.  We had a beautif...</td>
+      <td>A+++ for front desk service.  We had a beautif...</td>
+      <td>5</td>
+      <td>21/10/2012</td>
+      <td>A+++ for front desk service.  We had a beautif...</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>This is a terrific relatively low-price boutiq...</td>
+      <td>This is a terrific relatively low-price boutiq...</td>
+      <td>4</td>
+      <td>30/4/2011</td>
+      <td>This is a terrific relatively low-price boutiq...</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Great hotel in a convenient location. The room...</td>
+      <td>Great hotel in a convenient location. The room...</td>
+      <td>5</td>
+      <td>28/4/2012</td>
+      <td>Great hotel in a convenient location. The room...</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>We had to stay in five different hotels during...</td>
+      <td>We had to stay in five different hotels during...</td>
+      <td>5</td>
+      <td>21/4/2010</td>
+      <td>We had to stay in five different hotels during...</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Very convenient location (one block away from ...</td>
+      <td>Very convenient location (one block away from ...</td>
+      <td>4</td>
+      <td>30/6/2011</td>
+      <td>Very convenient location (one block away from ...</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>This is a wonderful little hotel with a staff ...</td>
+      <td>This is a wonderful little hotel with a staff ...</td>
+      <td>5</td>
+      <td>18/9/2011</td>
+      <td>This is a wonderful little hotel with a staff ...</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Also looks good. We look at the number of unique entries:</p>
 
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_full</span><span class="p">[</span><span class="s1">&#39;Review&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_full</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ms</span><span class="o">.</span><span class="n">all_reviews</span>
 </pre></div>
 
 </div>
@@ -13230,28 +14128,295 @@ memory usage: 7.9+ KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+<div class="prompt output_prompt">Out[68]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>200
-200
-</pre>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Review</th>
+      <th>title</th>
+      <th>Rating</th>
+      <th>date</th>
+      <th>fullreview</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Really nice and comfortable hotel. Close to th...</td>
+      <td>Really nice and comfortable hotel. Close to th...</td>
+      <td>5</td>
+      <td>11/4/2019</td>
+      <td>Really nice and comfortable hotel. Close to th...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Loved the location! Loved the (tiny) room and ...</td>
+      <td>Loved the location! Loved the (tiny) room and ...</td>
+      <td>5</td>
+      <td>21/6/2018</td>
+      <td>Loved the location! Loved the (tiny) room and ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Pretty good. The rooms are modern and stylish,...</td>
+      <td>Pretty good. The rooms are modern and stylish,...</td>
+      <td>3</td>
+      <td>18/9/2018</td>
+      <td>Pretty good. The rooms are modern and stylish,...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Simply adorable and they have thought of every...</td>
+      <td>Simply adorable and they have thought of every...</td>
+      <td>5</td>
+      <td>15/12/2017</td>
+      <td>Simply adorable and they have thought of every...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>One of my few 5 stars. Last day today and supe...</td>
+      <td>One of my few 5 stars. Last day today and supe...</td>
+      <td>5</td>
+      <td>8/10/2016</td>
+      <td>One of my few 5 stars. Last day today and supe...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>I was told before I left the US that London ho...</td>
+      <td>I was told before I left the US that London ho...</td>
+      <td>5</td>
+      <td>29/9/2017</td>
+      <td>I was told before I left the US that London ho...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>I discovered this little gem a few years ago a...</td>
+      <td>I discovered this little gem a few years ago a...</td>
+      <td>5</td>
+      <td>13/1/2016</td>
+      <td>I discovered this little gem a few years ago a...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>I stayed for one night at Hotel Indigo, and ha...</td>
+      <td>I stayed for one night at Hotel Indigo, and ha...</td>
+      <td>5</td>
+      <td>4/7/2016</td>
+      <td>I stayed for one night at Hotel Indigo, and ha...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Very nice room. Friendly staff. The staff real...</td>
+      <td>Very nice room. Friendly staff. The staff real...</td>
+      <td>5</td>
+      <td>24/9/2017</td>
+      <td>Very nice room. Friendly staff. The staff real...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>On Friday night, my wife and I arrived at the ...</td>
+      <td>On Friday night, my wife and I arrived at the ...</td>
+      <td>5</td>
+      <td>8/1/2017</td>
+      <td>On Friday night, my wife and I arrived at the ...</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Small rooms, decent price, friendly staffThis ...</td>
+      <td>Small rooms, decent price, friendly staffThis ...</td>
+      <td>4</td>
+      <td>6/2/2013</td>
+      <td>Small rooms, decent price, friendly staffThis ...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>The Indigo Hotel at Paddington is located to t...</td>
+      <td>The Indigo Hotel at Paddington is located to t...</td>
+      <td>4</td>
+      <td>22/10/2014</td>
+      <td>The Indigo Hotel at Paddington is located to t...</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>I am SUPER impressed with this hotel!First, I ...</td>
+      <td>I am SUPER impressed with this hotel!First, I ...</td>
+      <td>5</td>
+      <td>10/9/2012</td>
+      <td>I am SUPER impressed with this hotel!First, I ...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>The location cannot be beat - a very short wal...</td>
+      <td>The location cannot be beat - a very short wal...</td>
+      <td>5</td>
+      <td>27/2/2012</td>
+      <td>The location cannot be beat - a very short wal...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>We started our European trip in London and cou...</td>
+      <td>We started our European trip in London and cou...</td>
+      <td>5</td>
+      <td>30/11/2014</td>
+      <td>We started our European trip in London and cou...</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Hotel evaluation is always a function of price...</td>
+      <td>Hotel evaluation is always a function of price...</td>
+      <td>3</td>
+      <td>24/6/2015</td>
+      <td>Hotel evaluation is always a function of price...</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>This is my first time and firat hotel in our h...</td>
+      <td>This is my first time and firat hotel in our h...</td>
+      <td>4</td>
+      <td>23/2/2014</td>
+      <td>This is my first time and firat hotel in our h...</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Hotel Indigo's are really out to impress me. Y...</td>
+      <td>Hotel Indigo's are really out to impress me. Y...</td>
+      <td>4</td>
+      <td>17/3/2012</td>
+      <td>Hotel Indigo's are really out to impress me. Y...</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>I was here on business. The location was perfe...</td>
+      <td>I was here on business. The location was perfe...</td>
+      <td>5</td>
+      <td>12/1/2015</td>
+      <td>I was here on business. The location was perfe...</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Updated Review - Returned to London this week ...</td>
+      <td>Updated Review - Returned to London this week ...</td>
+      <td>5</td>
+      <td>30/7/2011</td>
+      <td>Updated Review - Returned to London this week ...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>The Hotel Indigo in Paddington is a recently r...</td>
+      <td>The Hotel Indigo in Paddington is a recently r...</td>
+      <td>4</td>
+      <td>15/1/2009</td>
+      <td>The Hotel Indigo in Paddington is a recently r...</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>A solid trendy boutique hotel located just a f...</td>
+      <td>A solid trendy boutique hotel located just a f...</td>
+      <td>4</td>
+      <td>13/10/2010</td>
+      <td>A solid trendy boutique hotel located just a f...</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>If you are looking for clean, quiet, well loca...</td>
+      <td>If you are looking for clean, quiet, well loca...</td>
+      <td>5</td>
+      <td>13/6/2014</td>
+      <td>If you are looking for clean, quiet, well loca...</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>We stayed here for 6 nights and really enjoyed...</td>
+      <td>We stayed here for 6 nights and really enjoyed...</td>
+      <td>4</td>
+      <td>6/6/2011</td>
+      <td>We stayed here for 6 nights and really enjoyed...</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>I stayed at this little boutique hotel back in...</td>
+      <td>I stayed at this little boutique hotel back in...</td>
+      <td>4</td>
+      <td>6/1/2011</td>
+      <td>I stayed at this little boutique hotel back in...</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>A+++ for front desk service.  We had a beautif...</td>
+      <td>A+++ for front desk service.  We had a beautif...</td>
+      <td>5</td>
+      <td>21/10/2012</td>
+      <td>A+++ for front desk service.  We had a beautif...</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>This is a terrific relatively low-price boutiq...</td>
+      <td>This is a terrific relatively low-price boutiq...</td>
+      <td>4</td>
+      <td>30/4/2011</td>
+      <td>This is a terrific relatively low-price boutiq...</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Great hotel in a convenient location. The room...</td>
+      <td>Great hotel in a convenient location. The room...</td>
+      <td>5</td>
+      <td>28/4/2012</td>
+      <td>Great hotel in a convenient location. The room...</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>We had to stay in five different hotels during...</td>
+      <td>We had to stay in five different hotels during...</td>
+      <td>5</td>
+      <td>21/4/2010</td>
+      <td>We had to stay in five different hotels during...</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Very convenient location (one block away from ...</td>
+      <td>Very convenient location (one block away from ...</td>
+      <td>4</td>
+      <td>30/6/2011</td>
+      <td>Very convenient location (one block away from ...</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>This is a wonderful little hotel with a staff ...</td>
+      <td>This is a wonderful little hotel with a staff ...</td>
+      <td>5</td>
+      <td>18/9/2011</td>
+      <td>This is a wonderful little hotel with a staff ...</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Looks good!!!</p>
-
-</div>
-</div>
 </div>
     </div>
   </div>
