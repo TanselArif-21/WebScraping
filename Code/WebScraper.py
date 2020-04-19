@@ -156,6 +156,8 @@ class WebScraper:
         # If a main url is not provided, get it from the object
         if not url:
             url = self.url
+            
+        print(url)
 
         # These are to store the actual review components
         reviews_array = []
@@ -173,11 +175,20 @@ class WebScraper:
         if self.site.lower() == 'tripadvisor':
             
             # Get all the review containers
-            reviews = top.find_class('review-container')
+            reviews = top.find_class('location-review-review-list-parts-SingleReview__mainCol--1hApa')
             
-            # Loop through the review containers and get the actual reviews    
-            for i in reviews:
-                reviews_array.append((i.find_class('entry')[0]).text_content())
+            if len(reviews) == 0:
+                reviews = top.find_class('is-9')
+            
+
+            
+            # Loop through the review containers and get the actual reviews
+            if len(reviews[0].find_class('location-review-review-list-parts-ExpandableReview__reviewText--gOmRC')) != 0:
+                for i in reviews:
+                    reviews_array.append((i.find_class('location-review-review-list-parts-ExpandableReview__reviewText--gOmRC')[0]).text_content())
+            else:
+                for i in reviews:
+                    reviews_array.append((i.find_class('partial_entry')[0]).text_content())
 
             # Within each review container is a class, the name of 
             # which determines the rating to display
@@ -186,13 +197,23 @@ class WebScraper:
             for i in reviews:
                 ratings_array.append(self.findStars(html.tostring(i)))
 
+
             # Get the titles from each review container
-            for i in reviews:
-                titles_array.append(i.find_class('noQuotes')[0].text_content())
-            
-            # Get the dates from each review container
-            for i in reviews:
-                dates_array.append(i.find_class('ratingDate')[0].text_content())
+            if len(reviews[0].find_class('location-review-review-list-parts-ReviewTitle__reviewTitle--2GO9Z')) > 0:
+                for i in reviews:
+                    titles_array.append(i.find_class('location-review-review-list-parts-ReviewTitle__reviewTitle--2GO9Z')[0].text_content())
+            else:
+                for i in reviews:
+                    titles_array.append(i.find_class('noQuotes')[0].text_content())
+
+            # Get the titles from each review container
+            if len(reviews[0].find_class('ratingDate')) > 0:
+                for i in reviews:
+                    dates_array.append(i.find_class('ratingDate')[0].text_content())
+            else:
+                for i in reviews:
+                    dates_array.append('2020')
+
                 
             # Diagnostics
             success = self.diagnostics(ratings_array,reviews_array,dates_array,titles_array)
@@ -311,10 +332,6 @@ class WebScraper:
 
         # Store the read information into a member variable
         self.all_reviews = df.reset_index().iloc[:,1:]
-        
-        return df.reset_index().iloc[:,1:]
-
-
 
 if __name__ == '__main__':
     # Single Usage
